@@ -69,6 +69,7 @@ export default function Hero() {
           ref={videoRef}
           src="/hero-water.mp4"
           autoPlay muted loop playsInline aria-hidden="true"
+          className="hero-video"
           style={{
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',

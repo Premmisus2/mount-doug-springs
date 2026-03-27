@@ -148,6 +148,7 @@ body {
   section { padding-top: 56px !important; padding-bottom: 56px !important; }
 
   /* ── Hero ── */
+  .hero-video { object-position: 58% center !important; }
   .hero-content {
     justify-content: flex-start !important;
     padding-top: 96px !important;
