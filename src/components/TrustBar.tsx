@@ -21,6 +21,7 @@ export default function TrustBar() {
       ref={ref as React.RefObject<HTMLDivElement>}
       role="region"
       aria-label="Business credentials and trust signals"
+      className="trust-bar-wrap"
       style={{
         background: '#fff',
         borderBottom: '1px solid #e2e8f0',

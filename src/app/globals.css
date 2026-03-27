@@ -147,13 +147,16 @@ body {
   /* Section vertical padding reduction */
   section { padding-top: 56px !important; padding-bottom: 56px !important; }
 
-  /* Hero CTA buttons — stack vertically */
+  /* ── Hero ── */
+  .hero-content {
+    justify-content: flex-start !important;
+    padding-top: 96px !important;
+    padding-bottom: 60px !important;
+  }
   .hero-ctas { flex-direction: column !important; align-items: flex-start !important; }
-
-  /* Hero stats — tighten gap */
   .hero-stats > div { padding-right: 14px !important; margin-right: 14px !important; }
 
-  /* TrustBar — horizontal scroll on mobile */
+  /* ── TrustBar — horizontal scroll ── */
   .trust-bar-inner {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -170,27 +173,36 @@ body {
     padding: 14px 18px !important;
     min-width: max-content;
   }
+  /* Fade hint on right edge */
+  .trust-bar-wrap { position: relative; }
+  .trust-bar-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 48px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.95));
+    pointer-events: none;
+  }
 
-  /* About: fix overflowing float pill */
+  /* ── Discovery — hide interactive panel, show card list ── */
+  .discovery-desktop { display: none !important; }
+
+  /* ── About ── */
   .about-float-pill { right: 4px !important; top: 12px !important; }
-
-  /* About stats grid — reduce gap */
   .about-stats { gap: 8px !important; }
-
-  /* About timeline */
   .about-timeline-wrap { padding: 20px 12px 16px !important; }
 
-  /* Footer: hide verbose service areas on mobile */
+  /* ── Footer ── */
   .footer-service-areas { display: none !important; }
-
-  /* Footer: 1 column on very small */
   .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+  .footer-inner { padding: 40px 20px 32px !important; }
+  .footer-contact-full { grid-column: 1 / -1 !important; }
 
-  /* FAQ bottom CTA buttons — stack */
+  /* ── FAQ buttons ── */
   .faq-cta-buttons { flex-direction: column !important; align-items: stretch !important; }
   .faq-cta-buttons a { justify-content: center !important; }
 
-  /* CTABanner: stack buttons */
+  /* ── CTABanner buttons ── */
   .cta-banner-btns { flex-direction: column !important; align-items: center !important; }
   .cta-banner-btns a { width: 100% !important; justify-content: center !important; }
 }

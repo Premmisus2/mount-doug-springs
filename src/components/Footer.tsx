@@ -28,7 +28,7 @@ export default function Footer() {
       aria-label="Site footer"
       style={{ background: P, borderTop: `3px solid ${T}` }}
     >
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 32px 40px' }}>
+      <div className="footer-inner" style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 32px 40px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr 1.4fr', gap: 40, marginBottom: 52 }} className="footer-grid">
 
           {/* Brand */}
@@ -36,7 +36,7 @@ export default function Footer() {
             <div style={{ marginBottom: 18 }}>
               <img src="/logo.png" alt="Mount Doug Springs" style={{ height: 40, width: 'auto', display: 'block' }} />
             </div>
-            <p style={{ fontSize: 14, color: '#4a6080', lineHeight: 1.7, maxWidth: 220 }}>
+            <p className="mobile-hide" style={{ fontSize: 14, color: '#4a6080', lineHeight: 1.7, maxWidth: 220 }}>
               Victoria's premier purified water store. Serving families, offices, and businesses with the freshest water since 2009.
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           {/* Info */}
-          <div>
+          <div className="mobile-hide">
             <p style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 18 }}>Info</p>
             {link('Our Purification Process', '/the-ultimate-water-store')}
             {link('About Our Store', '/the-ultimate-water-store')}
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="footer-contact-full">
             <p style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 18 }}>Contact</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <a

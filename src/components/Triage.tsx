@@ -149,7 +149,7 @@ export default function Triage() {
                 marginBottom: 12,
               }}>{lane.title}</h3>
 
-              <p style={{
+              <p className="mobile-hide" style={{
                 fontSize: 14, lineHeight: 1.7,
                 color: lane.featured ? 'rgba(255,255,255,0.75)' : '#757575',
                 marginBottom: 16, flex: 1,

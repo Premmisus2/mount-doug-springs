@@ -62,7 +62,7 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} style={{ height: `${frameConfig.SCROLL_HEIGHT_VH}vh`, position: 'relative' }}>
-      <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
+      <div style={{ position: 'sticky', top: 0, height: '100svh', overflow: 'hidden' }}>
 
         {/* VIDEO */}
         <video
@@ -95,7 +95,7 @@ export default function Hero() {
         }} />
 
         {/* CONTENT */}
-        <div style={{
+        <div className="hero-content" style={{
           position: 'absolute', inset: 0,
           display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
           padding: 'clamp(24px, 4vw, 60px) clamp(28px, 6vw, 80px)',

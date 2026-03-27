@@ -200,7 +200,7 @@ export default function About() {
                 </div>
                 <p style={{ fontSize: 16, fontWeight: 800, color: P, margin: '0 0 4px', lineHeight: 1 }}>{m.year}</p>
                 <p style={{ fontSize: 12, fontWeight: 700, color: T, margin: '0 0 8px', letterSpacing: '0.03em' }}>{m.label}</p>
-                <p style={{ fontSize: 12, color: '#757575', lineHeight: 1.6, margin: 0 }}>{m.detail}</p>
+                <p className="mobile-hide" style={{ fontSize: 12, color: '#757575', lineHeight: 1.6, margin: 0 }}>{m.detail}</p>
               </div>
             ))}
           </div>

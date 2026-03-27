@@ -74,7 +74,10 @@ export default function Discovery() {
           <span style={{
             fontSize: 11, fontWeight: 700, color: T,
             letterSpacing: '0.25em', textTransform: 'uppercase', display: 'block', marginBottom: 14,
-          }}>Interactive · Hover Each Stage</span>
+          }}>
+            <span className="mobile-hide">Interactive · Hover Each Stage</span>
+            <span className="mobile-only">The Purity Stages</span>
+          </span>
           <h2 style={{
             fontFamily: 'var(--font-fraunces), serif',
             fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', fontWeight: 600,
@@ -83,12 +86,13 @@ export default function Discovery() {
             The Purity Journey
           </h2>
           <p style={{ fontSize: 16, color: '#757575', maxWidth: 460, margin: '0 auto', lineHeight: 1.65 }}>
-            Four stages. Zero compromises. Hover the numbered points to see exactly what happens to your water.
+            <span className="mobile-hide">Four stages. Zero compromises. Hover the numbered points to see exactly what happens to your water.</span>
+            <span className="mobile-only">Four stages. Zero compromises. Everything that happens to your water before it reaches you.</span>
           </p>
         </div>
 
-        {/* Interactive image panel */}
-        <div style={{
+        {/* Interactive image panel — hidden on mobile */}
+        <div className="discovery-desktop" style={{
           position: 'relative',
           borderRadius: 24,
           overflow: 'hidden',

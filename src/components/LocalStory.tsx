@@ -58,14 +58,14 @@ export default function LocalStory() {
             </h2>
 
             <p style={{ fontSize: 16, color: '#757575', lineHeight: 1.8, marginBottom: 16 }}>
-              At <strong style={{ color: P }}>104-1505 Admirals Road</strong> in Victoria's Admirals Walk, we've built a reputation on something simple: making pure water effortless to get.
+              At <strong style={{ color: P }}>104-1505 Admirals Road</strong> in Victoria's Admirals Walk — we sanitize your jug, fill it fresh, and carry it to your car. <span className="mobile-hide">We've built a reputation on making pure water effortless to get.</span>
             </p>
-            <p style={{ fontSize: 16, color: '#757575', lineHeight: 1.8, marginBottom: 32 }}>
+            <p className="mobile-hide" style={{ fontSize: 16, color: '#757575', lineHeight: 1.8, marginBottom: 32 }}>
               Every customer gets the same white-glove treatment — we sanitize your jug, fill it fresh, and carry it to your car. Whether you're a single household or an office with a standing order, you'll never struggle with a heavy water jug at our store.
             </p>
 
             {/* Feature list */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginBottom: 36 }}>
+            <div className="mobile-hide" style={{ display: 'flex', flexDirection: 'column', gap: 18, marginBottom: 36 }}>
               {features.map((f, i) => (
                 <ScrollReveal key={i} variant="up" delay={i * 0.08}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>

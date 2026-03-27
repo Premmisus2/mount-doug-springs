@@ -78,7 +78,9 @@ export default function Services() {
           }}
             onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#0369a1'}
             onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#0284c7'}
-          >Schedule Delivery — 250 381-2088</a>
+          >
+            <span className="mobile-hide">Schedule Delivery — </span>250 381-2088
+          </a>
           <a href="mailto:delivery@mtdougsprings.com" style={{
             padding: '14px 32px', borderRadius: 100, background: 'transparent',
             color: '#1a2760', fontWeight: 600, fontSize: 15, textDecoration: 'none',
