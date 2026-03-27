@@ -88,7 +88,7 @@ export default function Hero() {
           background: `linear-gradient(to bottom, rgba(30,56,146,0.7) 0%, transparent 100%)`,
           pointerEvents: 'none',
         }} />
-        <div style={{
+        <div className="hero-corner" style={{
           position: 'absolute', bottom: 0, right: 0,
           width: '22%', height: '18%',
           background: 'linear-gradient(to top left, rgba(30,56,146,1) 0%, rgba(30,56,146,0.8) 40%, transparent 75%)',

@@ -149,6 +149,7 @@ body {
 
   /* ── Hero ── */
   .hero-video { object-position: 58% center !important; }
+  .hero-corner { display: none !important; }
   .hero-content {
     justify-content: flex-start !important;
     padding-top: 96px !important;
