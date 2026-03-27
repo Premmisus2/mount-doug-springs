@@ -92,7 +92,7 @@ export default function About() {
               </div>
             </div>
             {/* Stats pill */}
-            <div style={{
+            <div className="about-float-pill" style={{
               position: 'absolute', top: 20, right: -16, zIndex: 2,
               background: '#fff',
               borderRadius: 14,
@@ -124,11 +124,11 @@ export default function About() {
             <p style={{ fontSize: 15, color: '#5a5a5a', lineHeight: 1.8, marginBottom: 16 }}>
               When Wes Treleaven first arrived in Victoria in 1975, he spotted a property near Mount Douglas that captured his imagination. Over two decades later, in 1998, that dream became reality — and <strong style={{ color: P }}>Mount Doug Springs was born</strong>.
             </p>
-            <p style={{ fontSize: 15, color: '#5a5a5a', lineHeight: 1.8, marginBottom: 16 }}>
+            <p className="mobile-hide" style={{ fontSize: 15, color: '#5a5a5a', lineHeight: 1.8, marginBottom: 16 }}>
               What started as a passion for delivering genuinely pure water to Victoria families grew into Greater Victoria's most trusted water store. By 2021, Mount Doug Springs was proudly serving <strong style={{ color: P }}>over 1,100 delivery customers</strong> across Saanich, Oak Bay, Esquimalt, Langford, and beyond.
             </p>
             <p style={{ fontSize: 15, color: '#5a5a5a', lineHeight: 1.8, marginBottom: 32 }}>
-              Today, operating from <strong style={{ color: P }}>104-1505 Admirals Road in View Royal</strong>, the team bottles your water fresh the evening before delivery — because Wes believes you deserve more than water that's been sitting on a shelf. Every jug is sanitized, filled, and loaded for you. <em>That's the Mount Doug difference.</em>
+              Today, from <strong style={{ color: P }}>104-1505 Admirals Road</strong>, the team bottles your water fresh the evening before delivery. Every jug is sanitized, filled, and loaded for you. <em>That's the Mount Doug difference.</em>
             </p>
 
             {/* Trust indicators */}
@@ -174,7 +174,7 @@ export default function About() {
             position: 'relative',
           }}>
             {/* Connecting line */}
-            <div style={{
+            <div className="mobile-hide" style={{
               position: 'absolute',
               top: 20, left: '12.5%', right: '12.5%',
               height: 2,

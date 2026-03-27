@@ -74,7 +74,7 @@ export default function Reviews() {
         {/* Review cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="reviews-grid">
           {reviews.map((r, i) => (
-            <ScrollReveal key={i} variant="up" delay={i * 0.07}>
+            <ScrollReveal key={i} variant="up" delay={i * 0.07} className={i >= 3 ? 'mobile-hide' : ''}>
               <div
                 style={{
                   background: '#fff', borderRadius: 18, padding: '26px 24px',

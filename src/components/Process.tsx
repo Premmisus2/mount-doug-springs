@@ -238,12 +238,12 @@ export default function Process() {
         </ScrollReveal>
 
         {/* ── Mobile layout ── */}
-        <div className="process-mobile" style={{ display: 'none', flexDirection: 'column', gap: 14, alignItems: 'center' }}>
+        <div className="process-mobile" style={{ display: 'none', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
           <img
             src="/bottle.png"
             alt="Mount Doug Springs 18.9L"
             style={{
-              width: '55%', maxWidth: 200, display: 'block', marginBottom: 12,
+              width: '45%', maxWidth: 160, display: 'block', marginBottom: 8,
               filter: 'drop-shadow(0 16px 32px rgba(30,56,146,0.18))',
             }}
           />

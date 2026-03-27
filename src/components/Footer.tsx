@@ -102,7 +102,7 @@ export default function Footer() {
         </div>
 
         {/* Service Areas */}
-        <div style={{ padding: '28px 0', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', marginBottom: 28 }}>
+        <div className="footer-service-areas" style={{ padding: '28px 0', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', marginBottom: 28 }}>
           <p style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 14 }}>
             Service Areas — Water Delivery Across Greater Victoria
           </p>

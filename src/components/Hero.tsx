@@ -139,7 +139,7 @@ export default function Hero() {
                 <span style={{ width: 5, height: 5, borderRadius: '50%', background: CTA, display: 'inline-block', boxShadow: `0 0 6px ${CTA}` }} />
                 Victoria, BC
               </span>
-              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
+              <span className="mobile-hide" style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
                 · Admirals Road · 21+ years
               </span>
             </div>
@@ -172,13 +172,20 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p style={{
+            <p className="mobile-hide" style={{
               fontSize: 'clamp(0.9rem, 1.3vw, 1.05rem)',
               color: 'rgba(255,255,255,0.65)',
               lineHeight: 1.75, maxWidth: 420, marginBottom: 32,
             }}>
               We sanitize, fill, and <strong style={{ color: '#fff', fontWeight: 700 }}>load every jug into your car</strong>.
               Drive-up or home delivery — pure water, done for you.
+            </p>
+            <p className="mobile-only" style={{
+              fontSize: '0.95rem',
+              color: 'rgba(255,255,255,0.65)',
+              lineHeight: 1.65, maxWidth: 320, marginBottom: 28,
+            }}>
+              Drive-up or home delivery. <strong style={{ color: '#fff' }}>We load every jug for you.</strong>
             </p>
 
             {/* CTAs with Ripple */}

@@ -208,7 +208,8 @@ export default function FAQ() {
                 display: 'inline-flex', alignItems: 'center', gap: 7,
               }}
             >
-              delivery@mtdougsprings.com
+              <span className="mobile-hide">delivery@mtdougsprings.com</span>
+              <span className="mobile-only">Send an Email</span>
             </a>
           </div>
         </div>

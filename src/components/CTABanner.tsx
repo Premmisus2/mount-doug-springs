@@ -14,7 +14,7 @@ export default function CTABanner() {
         <p style={{ fontSize: 17, color: 'rgba(186,230,253,0.7)', lineHeight: 1.65, marginBottom: 40, maxWidth: 440, margin: '0 auto 40px' }}>
           Stop by Admirals Walk or call to arrange your first delivery. Fresh water is a few steps away.
         </p>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
+        <div className="cta-banner-btns" style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
           <a href="tel:2503812088" style={{
             padding: '15px 36px', borderRadius: 100, background: '#29ABE2', color: '#1E3892',
             fontWeight: 700, fontSize: 16, textDecoration: 'none',
