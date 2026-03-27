@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #1a2760;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+/* Discovery node hover card */
+.discovery-node:hover .node-card {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.node-card {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Pulse ring on nodes */
+@keyframes pulse-ring {
+  0%   { transform: scale(0.85); opacity: 0.7; }
+  50%  { transform: scale(1.2);  opacity: 0.25; }
+  100% { transform: scale(0.85); opacity: 0.7; }
+}
+.pulse { animation: pulse-ring 2.2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+/* Scroll snap for range section */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Hero canvas */
+.hero-canvas { width: 100%; height: 100%; object-fit: cover; }
+
+/* Float */
+@keyframes float-up {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.float { animation: float-up 5s ease-in-out infinite; }
+
+/* Particle */
+@keyframes particle-rise {
+  0%   { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-70px) scale(0.2); opacity: 0; }
+}
+.particle { animation: particle-rise linear infinite; }
+
+/* ── Scroll-reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-left.in { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-right.in { opacity: 1; transform: translateX(0); }
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-scale.in { opacity: 1; transform: scale(1); }
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* ── Water Ripple on CTAs ── */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+.ripple-btn .ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: ripple-expand 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple-expand {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ── Page transitions ── */
+.page-enter {
+  animation: page-fade-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Freshness pulse ── */
+@keyframes fresh-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+}
+.fresh-dot { animation: fresh-pulse 2s ease-in-out infinite; }
+
+/* ── Mobile base fixes ── */
+@media (max-width: 640px) {
+  h1 { word-break: break-word; }
+
+  /* Hero CTA buttons — stack vertically */
+  .hero-ctas { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* Hero stats — tighten gap */
+  .hero-stats > div { padding-right: 16px !important; margin-right: 16px !important; }
+
+  /* About stats grid — reduce gap */
+  .about-stats { gap: 8px !important; }
+
+  /* FAQ bottom CTA buttons — stack */
+  .faq-cta-buttons { flex-direction: column !important; align-items: stretch !important; }
+  .faq-cta-buttons a { justify-content: center !important; }
+
+  /* Timeline padding on mobile */
+  .about-timeline-wrap { padding: 24px 16px 20px !important; }
+
+  /* TrustBar — allow more wrapping on small screens */
+  .trust-bar-inner > div { border-right: none !important; border-bottom: 1px solid #f1f5f9; padding: 12px 16px !important; }
+
+  /* Section vertical padding reduction */
+  section { padding-top: 64px !important; padding-bottom: 64px !important; }
+}
+
+/* ── Very small phones ── */
+@media (max-width: 480px) {
+  .hero-freshness { display: none !important; }
+  .hero-logo { display: none !important; }
+}
+
+/* ── Tablet fixes ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero-ctas { flex-wrap: wrap !important; }
 }
