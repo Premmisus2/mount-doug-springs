@@ -57,9 +57,7 @@ export default function TrustBar() {
       </div>
 
       {/* Mobile: 2-column grid */}
-      <div className="trust-mobile" style={{ display: 'none', padding: '16px 20px', gap: 10,
-        display: 'none', gridTemplateColumns: '1fr 1fr',
-      }}>
+      <div className="trust-mobile" style={{ display: 'none', padding: '16px 20px', gap: 10, gridTemplateColumns: '1fr 1fr' }}>
         {badges.map((b, i) => (
           <div key={i} style={{
             display: 'flex', alignItems: 'center', gap: 10,
