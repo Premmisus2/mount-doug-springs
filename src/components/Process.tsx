@@ -243,7 +243,8 @@ export default function Process() {
             src="/bottle.png"
             alt="Mount Doug Springs 18.9L"
             style={{
-              width: '45%', maxWidth: 160, display: 'block', marginBottom: 8,
+              width: '48%', maxWidth: 170, display: 'block', marginBottom: 8,
+              margin: '0 auto 8px',
               filter: 'drop-shadow(0 16px 32px rgba(30,56,146,0.18))',
             }}
           />
