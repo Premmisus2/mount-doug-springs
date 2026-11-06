@@ -32,19 +32,14 @@ export default function UltimateWaterStorePage() {
       `}</style>
 
       {/* HERO */}
-      <section style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 55%,#063a78 100%)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:480, height:480, top:-100, left:-120, borderRadius:'50%', background:'rgba(41,171,226,.12)', animation:'uws-pulse 6s ease-in-out infinite', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', width:300, height:300, bottom:-80, right:-60, borderRadius:'50%', background:'rgba(41,171,226,.08)', animation:'uws-pulse 9s ease-in-out infinite 2s', pointerEvents:'none' }} />
-        {[{s:10,t:'20%',l:'10%',d:'0s'},{s:7,t:'58%',l:'6%',d:'1s'},{s:13,t:'22%',r:'8%',d:'.5s'},{s:8,t:'68%',r:'12%',d:'1.8s'}].map((p,i)=>(
-          <div key={i} style={{ position:'absolute', top:p.t, left:p.l, right:p.r, width:p.s, height:p.s, borderRadius:'50%', background:'rgba(41,171,226,.4)', animation:`uws-float 3.5s ease-in-out infinite`, animationDelay:p.d, pointerEvents:'none' }} />
-        ))}
+      <section className="page-hero" style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 55%,#063a78 100%)', textAlign:'center' }}>
 
         <div style={{ position:'relative', zIndex:2, padding:'0 24px' }}>
           <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:4, background:'rgba(41,171,226,.12)', border:'1px solid rgba(41,171,226,.3)', fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'uws-rise .6s ease both' }}>
             <span style={{ width:6, height:6, borderRadius:'50%', background:'#29ABE2', display:'inline-block' }} />
             Victoria, BC · 104-1505 Admirals Road
           </span>
-          <h1 style={{ fontSize:'clamp(2.2rem,5vw,3.8rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'uws-rise .7s ease both .1s' }}>
+          <h1 style={{ fontSize:'clamp(1.9rem,4vw,2.9rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'uws-rise .7s ease both .1s' }}>
             The{' '}
             <span style={{ background:'linear-gradient(90deg,#29ABE2,#29ABE2)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>Ultimate</span>
             {' '}Water Store
@@ -218,7 +213,6 @@ export default function UltimateWaterStorePage() {
 
       {/* CTA */}
       <section style={{ position:'relative', overflow:'hidden', padding:'80px 24px', background:'linear-gradient(135deg,#1E3892,#020f1f)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:350, height:350, top:-80, right:-80, borderRadius:'50%', background:'rgba(41,171,226,.1)', animation:'uws-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
         <div style={{ position:'relative', zIndex:2, maxWidth:620, margin:'0 auto' }}>
           <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#fff', letterSpacing:'-.02em', marginBottom:16 }}>
             Come Visit Us Today

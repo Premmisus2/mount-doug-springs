@@ -141,6 +141,8 @@ body {
 
   /* Section vertical padding reduction */
   section { padding-top: 56px !important; padding-bottom: 56px !important; }
+  /* page heroes sit under the fixed menu (63px): keep their label clear of it */
+  section.page-hero { padding-top: 104px !important; }
 
   /* ── Hero ── */
   .hero-video { object-position: 58% center !important; }

@@ -28,21 +28,14 @@ export default function DeliveryInfoPage() {
       `}</style>
 
       {/* HERO */}
-      <section style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 60%,#0a4a7a 100%)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:500, height:500, top:-100, right:-150, borderRadius:'50%', background:'rgba(41,171,226,.1)', animation:'del-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', width:250, height:250, bottom:-40, left:-80, borderRadius:'50%', background:'rgba(41,171,226,.07)', animation:'del-pulse 5s ease-in-out infinite 1.5s', pointerEvents:'none' }} />
-        {[{t:'20%',l:'8%',d:'0s'},{t:'55%',l:'5%',d:'1.2s'},{t:'18%',r:'7%',d:'.6s'},{t:'65%',r:'9%',d:'1.8s'}].map((p,i)=>(
-          <div key={i} style={{ position:'absolute', top:p.t, left:p.l, right:p.r, animation:`del-float 3.5s ease-in-out infinite`, animationDelay:p.d, pointerEvents:'none' }}>
-            <PinIcon size={24} color="rgba(41,171,226,.6)" />
-          </div>
-        ))}
+      <section className="page-hero" style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 60%,#0a4a7a 100%)', textAlign:'center' }}>
 
         <div style={{ position:'relative', zIndex:2, padding:'0 24px' }}>
           <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:4, background:'rgba(41,171,226,.12)', border:'1px solid rgba(41,171,226,.3)', fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'del-rise .6s ease both' }}>
             <span style={{ width:6, height:6, borderRadius:'50%', background:'#29ABE2', display:'inline-block' }} />
             Delivery & Pickup · Victoria BC
           </span>
-          <h1 style={{ fontSize:'clamp(2.4rem,5.5vw,3.8rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'del-rise .7s ease both .1s' }}>
+          <h1 style={{ fontSize:'clamp(1.9rem,4vw,2.9rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'del-rise .7s ease both .1s' }}>
             We Bring Clean Water{' '}
             <span style={{ background:'linear-gradient(90deg,#29ABE2,#29ABE2)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
               Right to You.
@@ -226,7 +219,6 @@ export default function DeliveryInfoPage() {
 
       {/* DEPOSIT */}
       <section style={{ position:'relative', overflow:'hidden', padding:'80px 24px', background:'linear-gradient(135deg,#1E3892,#020f1f)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:400, height:400, top:-100, left:-100, borderRadius:'50%', background:'rgba(41,171,226,.1)', animation:'del-pulse 8s ease-in-out infinite', pointerEvents:'none' }} />
         <div style={{ position:'relative', zIndex:2, maxWidth:680, margin:'0 auto' }}>
           <span style={{ fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.25em', textTransform:'uppercase', display:'block', marginBottom:16 }}>Bottle Deposit</span>
           <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#fff', letterSpacing:'-.02em', marginBottom:20 }}>

@@ -120,14 +120,14 @@ export default function Hero() {
             <h1 style={{ margin: '0 0 20px', lineHeight: 1.0 }}>
               <span style={{
                 display: 'block',
-                fontSize: 'clamp(3rem, 7vw, 6rem)', fontWeight: 900,
+                fontSize: 'clamp(2.5rem, 5.6vw, 4.6rem)', fontWeight: 900,
                 color: '#ffffff', letterSpacing: '-0.04em', lineHeight: 0.95,
               }}>
                 Victoria's
               </span>
               <span style={{
                 display: 'block',
-                fontSize: 'clamp(3rem, 7vw, 6rem)', fontWeight: 900,
+                fontSize: 'clamp(2.5rem, 5.6vw, 4.6rem)', fontWeight: 900,
                 background: `linear-gradient(90deg, #ffffff 0%, ${T} 60%)`,
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
                 letterSpacing: '-0.04em', lineHeight: 0.95,

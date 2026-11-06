@@ -41,19 +41,14 @@ export default function HyperOxygenatedPage() {
       `}</style>
 
       {/* HERO */}
-      <section style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 40%,#064e3b 100%)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:500, height:500, top:-100, left:-130, borderRadius:'50%', background:'rgba(5,150,105,.1)', animation:'oxy-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', width:300, height:300, bottom:-80, right:-60, borderRadius:'50%', background:'rgba(41,171,226,.08)', animation:'oxy-pulse 5s ease-in-out infinite 2s', pointerEvents:'none' }} />
-        {[{s:8,l:'8%',d:'0s'},{s:12,l:'18%',d:'.8s'},{s:6,l:'28%',d:'1.6s'},{s:10,r:'12%',d:'.4s'},{s:7,r:'22%',d:'1.2s'},{s:11,r:'32%',d:'2s'},{s:9,l:'50%',d:'1s'}].map((b,i)=>(
-          <div key={i} style={{ position:'absolute', bottom:80, left:b.l, right:b.r, width:b.s, height:b.s, borderRadius:'50%', border:'1.5px solid rgba(52,211,153,.6)', animation:`oxy-bubble 3s ease-in infinite`, animationDelay:b.d, pointerEvents:'none' }} />
-        ))}
+      <section className="page-hero" style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 40%,#064e3b 100%)', textAlign:'center' }}>
 
         <div style={{ position:'relative', zIndex:2, padding:'0 24px' }}>
           <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:4, background:'rgba(52,211,153,.15)', border:'1px solid rgba(52,211,153,.35)', fontSize:11, fontWeight:700, color:'#34d399', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'oxy-rise .6s ease both' }}>
             <span style={{ width:6, height:6, borderRadius:'50%', background:'#34d399', display:'inline-block' }} />
             Oxygen-Infused Water · Victoria BC
           </span>
-          <h1 style={{ fontSize:'clamp(2.2rem,5vw,3.8rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'oxy-rise .7s ease both .1s' }}>
+          <h1 style={{ fontSize:'clamp(1.9rem,4vw,2.9rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'oxy-rise .7s ease both .1s' }}>
             Hyper-Oxygenated{' '}
             <span style={{ background:'linear-gradient(90deg,#34d399,#29ABE2)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>Water</span>
           </h1>
@@ -222,7 +217,6 @@ export default function HyperOxygenatedPage() {
 
       {/* CTA */}
       <section style={{ position:'relative', overflow:'hidden', padding:'80px 24px', background:'linear-gradient(135deg,#1E3892,#064e3b)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:400, height:400, top:-80, right:-80, borderRadius:'50%', background:'rgba(52,211,153,.08)', animation:'oxy-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
         <div style={{ position:'relative', zIndex:2, maxWidth:580, margin:'0 auto' }}>
           <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#fff', letterSpacing:'-.02em', marginBottom:16 }}>
             Try It Today

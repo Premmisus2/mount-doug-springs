@@ -35,19 +35,14 @@ export default function EmergencyWaterPage() {
       `}</style>
 
       {/* HERO */}
-      <section style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1a0a0f 40%,#2d0b15 70%,#1E3892 100%)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:500, height:500, top:-100, left:-120, borderRadius:'50%', background:'rgba(225,29,72,.08)', animation:'emg-pulse 6s ease-in-out infinite', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', width:300, height:300, bottom:-80, right:-60, borderRadius:'50%', background:'rgba(41,171,226,.08)', animation:'emg-pulse 8s ease-in-out infinite 2s', pointerEvents:'none' }} />
-        {[{t:'20%',l:'7%',d:'0s'},{t:'60%',l:'4%',d:'1s'},{t:'22%',r:'6%',d:'.6s'},{t:'65%',r:'10%',d:'1.6s'}].map((p,i)=>(
-          <div key={i} style={{ position:'absolute', top:p.t, left:p.l, right:p.r, fontSize:20, animation:`emg-float 3.5s ease-in-out infinite`, animationDelay:p.d, pointerEvents:'none', color:'rgba(252,165,165,.6)' }}><DropIcon size={22} /></div>
-        ))}
+      <section className="page-hero" style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1a0a0f 40%,#2d0b15 70%,#1E3892 100%)', textAlign:'center' }}>
 
         <div style={{ position:'relative', zIndex:2, padding:'0 24px' }}>
           <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:6, background:'rgba(225,29,72,.15)', border:'1px solid rgba(225,29,72,.4)', fontSize:11, fontWeight:700, color:'#fca5a5', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'emg-rise .6s ease both' }}>
             <span style={{ width:6, height:6, borderRadius:'50%', background:'#ef4444', display:'inline-block', animation:'emg-urgent 2s ease-in-out infinite' }} />
             Emergency Preparedness · Victoria BC
           </span>
-          <h1 style={{ fontSize:'clamp(2.4rem,5.5vw,3.8rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'emg-rise .7s ease both .1s' }}>
+          <h1 style={{ fontSize:'clamp(1.9rem,4vw,2.9rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'emg-rise .7s ease both .1s' }}>
             Be Ready{' '}
             <span style={{ background:'linear-gradient(90deg,#f87171,#fca5a5)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>Before</span>
             {' '}You Need It.
@@ -230,7 +225,6 @@ export default function EmergencyWaterPage() {
 
       {/* FINAL CTA */}
       <section style={{ position:'relative', overflow:'hidden', padding:'80px 24px', background:'linear-gradient(135deg,#1E3892,#020f1f)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:400, height:400, top:-80, left:-80, borderRadius:'50%', background:'rgba(41,171,226,.1)', animation:'emg-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
         <div style={{ position:'relative', zIndex:2, maxWidth:620, margin:'0 auto' }}>
           <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#fff', letterSpacing:'-.02em', marginBottom:16 }}>
             Don't Wait Until You Need It.

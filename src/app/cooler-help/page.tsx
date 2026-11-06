@@ -13,7 +13,7 @@ export default function CoolerHelpPage() {
       <Nav />
 
       {/* Hero */}
-      <section style={{
+      <section className="page-hero" style={{
         paddingTop: 128, paddingBottom: 80, paddingLeft: 24, paddingRight: 24,
         background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%)',
         textAlign: 'center',
@@ -25,7 +25,7 @@ export default function CoolerHelpPage() {
           fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
           marginBottom: 20, border: '1px solid #bfdbfe',
         }}>Support</span>
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', fontWeight: 800, color: '#1a2760', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 20 }}>
+        <h1 style={{ fontSize: 'clamp(1.9rem, 4vw, 2.9rem)', fontWeight: 800, color: '#1a2760', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 20 }}>
           Cooler Help Centre
         </h1>
         <p style={{ fontSize: 17, color: '#4b5563', maxWidth: 520, margin: '0 auto 40px', lineHeight: 1.7 }}>
