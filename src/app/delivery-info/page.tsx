@@ -1,12 +1,13 @@
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import { PhoneIcon, PinIcon, MailIcon, ClockIcon, StoreIcon, DropIcon, CarIcon, ExchangeIcon, IconTile } from '@/components/Icons';
 
 export const metadata: import("next").Metadata = {
-  title: 'Water Delivery Victoria BC | Zones, Schedule & Pickup Info',
-  description: 'Water delivery across Greater Victoria BC — Victoria Core, Saanich, Langford, Esquimalt, Sidney and more. Flexible schedules, no contracts, $10 refundable jug deposit. Call 250-381-2088.',
+  title: 'Water Delivery Victoria BC | Delivery & Pickup Info',
+  description: 'Home and office water delivery across Greater Victoria BC, from Sooke to Sidney and Oak Bay to Westshore. Every two weeks, monthly or on request. Call 250 381-2088.',
   keywords: ['water delivery Victoria BC', 'water delivery Saanich', 'water delivery Langford', 'water delivery Esquimalt', 'water delivery schedule Victoria', 'water pickup Victoria BC'],
   alternates: { canonical: 'https://www.mtdougsprings.com/delivery-info' },
-  openGraph: { title: 'Water Delivery Victoria BC | Mount Doug Springs', description: 'Delivering pure water across Greater Victoria. Flexible schedules, no contracts.', url: 'https://www.mtdougsprings.com/delivery-info', type: 'website' },
+  openGraph: { title: 'Water Delivery Victoria BC | Mount Doug Springs', description: 'Home and office water delivery across Greater Victoria, from Sooke to Sidney and Oak Bay to Westshore.', url: 'https://www.mtdougsprings.com/delivery-info', type: 'website' },
 };
 
 export default function DeliveryInfoPage() {
@@ -31,11 +32,13 @@ export default function DeliveryInfoPage() {
         <div style={{ position:'absolute', width:500, height:500, top:-100, right:-150, borderRadius:'50%', background:'rgba(41,171,226,.1)', animation:'del-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
         <div style={{ position:'absolute', width:250, height:250, bottom:-40, left:-80, borderRadius:'50%', background:'rgba(41,171,226,.07)', animation:'del-pulse 5s ease-in-out infinite 1.5s', pointerEvents:'none' }} />
         {[{t:'20%',l:'8%',d:'0s'},{t:'55%',l:'5%',d:'1.2s'},{t:'18%',r:'7%',d:'.6s'},{t:'65%',r:'9%',d:'1.8s'}].map((p,i)=>(
-          <div key={i} style={{ position:'absolute', top:p.t, left:p.l, right:p.r, animation:`del-float 3.5s ease-in-out infinite`, animationDelay:p.d, fontSize:22, pointerEvents:'none' }}>📍</div>
+          <div key={i} style={{ position:'absolute', top:p.t, left:p.l, right:p.r, animation:`del-float 3.5s ease-in-out infinite`, animationDelay:p.d, pointerEvents:'none' }}>
+            <PinIcon size={24} color="rgba(41,171,226,.6)" />
+          </div>
         ))}
 
         <div style={{ position:'relative', zIndex:2, padding:'0 24px' }}>
-          <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:100, background:'rgba(41,171,226,.12)', border:'1px solid rgba(41,171,226,.3)', fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'del-rise .6s ease both' }}>
+          <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:4, background:'rgba(41,171,226,.12)', border:'1px solid rgba(41,171,226,.3)', fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'del-rise .6s ease both' }}>
             <span style={{ width:6, height:6, borderRadius:'50%', background:'#29ABE2', display:'inline-block' }} />
             Delivery & Pickup · Victoria BC
           </span>
@@ -45,12 +48,12 @@ export default function DeliveryInfoPage() {
               Right to You.
             </span>
           </h1>
-          <p style={{ fontSize:17, color:'rgba(255,255,255,.7)', maxWidth:500, margin:'0 auto 44px', lineHeight:1.7, animation:'del-rise .7s ease both .2s' }}>
-            Serving Victoria and surrounding areas. Flexible schedules, no long-term contracts, and a simple $10 refundable jug deposit.
+          <p style={{ fontSize:17, color:'rgba(255,255,255,.88)', maxWidth:500, margin:'0 auto 44px', lineHeight:1.7, animation:'del-rise .7s ease both .2s' }}>
+            Home and office delivery across Greater Victoria, from Sooke to Sidney and Oak Bay to Westshore. Your water is bottled the evening before it arrives.
           </p>
           <div style={{ display:'flex', gap:12, justifyContent:'center', flexWrap:'wrap', animation:'del-rise .7s ease both .3s' }}>
-            <a href="tel:2503812088" className="del-cta-btn" style={{ padding:'14px 32px', borderRadius:8, background:'#29ABE2', color:'#fff', fontWeight:700, fontSize:15, textDecoration:'none', boxShadow:'0 6px 24px rgba(41,171,226,.4)' }}>
-              Call to Schedule — 250 381-2088
+            <a href="tel:2503812088" className="del-cta-btn" style={{ padding:'14px 32px', borderRadius:8, background:'#29ABE2', color:'#fff', fontWeight:700, fontSize:15, textDecoration:'none', boxShadow:'0 6px 24px rgba(41,171,226,.4)', display:'inline-flex', alignItems:'center', gap:8 }}>
+              <PhoneIcon size={16} /> Call 250 381-2088
             </a>
             <a href="/order" style={{ padding:'14px 32px', borderRadius:8, background:'rgba(255,255,255,.08)', border:'1.5px solid rgba(255,255,255,.25)', color:'#fff', fontWeight:600, fontSize:15, textDecoration:'none' }}>
               Order Online
@@ -76,16 +79,16 @@ export default function DeliveryInfoPage() {
               How Delivery Works
             </h2>
             <p style={{ color:'#757575', fontSize:15, maxWidth:460, margin:'0 auto', lineHeight:1.7 }}>
-              Simple from start to finish — no app, no contract, just a phone call.
+              Simple from start to finish. Call or email, and we take it from there.
             </p>
           </div>
 
           <div style={{ display:'flex', flexDirection:'column', alignItems:'center' }}>
             {[
-              { num:'1', icon:'📞', title:'Call or Email Us', body:'Contact us at 250 381-2088 or delivery@mtdougsprings.com. Tell us your address and we confirm your delivery zone and preferred schedule.' },
-              { num:'2', icon:'📅', title:'We Set Up Your Route', body:'We add you to the nearest weekly or bi-weekly delivery route. No contracts — change or cancel any time.' },
-              { num:'3', icon:'🌙', title:'Bottled Fresh the Night Before', body:'Your water is purified and bottled the evening before your delivery day — never sitting on a shelf for weeks.' },
-              { num:'4', icon:'🚚', title:'Delivered to Your Door', body:'We deliver directly to your home or office. Full jugs in, empties out. Your $10 deposit follows your jug — bring it back, get it back.' },
+              { num:'1', icon:<PhoneIcon size={20} color="#29ABE2" />, title:'Call or Email Us', body:'Reach us at 250 381-2088 or delivery@mtdougsprings.com and tell us where you are. We deliver across Greater Victoria, from Sooke to Sidney and Oak Bay to Westshore.' },
+              { num:'2', icon:<ClockIcon size={20} color="#29ABE2" />, title:'Choose How Often', body:'Every two weeks, monthly, or on request. Each bottle has an initial refundable deposit when you start.' },
+              { num:'3', icon:<DropIcon size={20} color="#29ABE2" />, title:'Bottled Fresh the Night Before', body:'Your water is bottled the evening before your delivery day.' },
+              { num:'4', icon:<CarIcon size={20} color="#29ABE2" />, title:'Delivered to Your Door', body:'We bring it to your home or office. On delivery day, leave your empty bottles out for the driver.' },
             ].map((step,i)=>(
               <div key={i} className="del-step" style={{ width:'100%', maxWidth:640 }}>
                 <div style={{ display:'flex', gap:20, alignItems:'flex-start', background:'#fff', borderRadius:16, padding:'24px 28px', border:'1.5px solid rgba(41,171,226,.12)', boxShadow:'0 2px 12px rgba(30,56,146,.05)' }}>
@@ -94,7 +97,7 @@ export default function DeliveryInfoPage() {
                   </div>
                   <div style={{ flex:1 }}>
                     <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:8 }}>
-                      <span style={{ fontSize:20 }}>{step.icon}</span>
+                      <span style={{ display:'inline-flex' }}>{step.icon}</span>
                       <h3 style={{ fontSize:16, fontWeight:700, color:'#1E3892', margin:0 }}>{step.title}</h3>
                     </div>
                     <p style={{ fontSize:14, color:'#757575', lineHeight:1.7, margin:0 }}>{step.body}</p>
@@ -116,13 +119,13 @@ export default function DeliveryInfoPage() {
             </h2>
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="del-services-grid">
               {[
-                { icon:'🚗', title:'Drive-Up Service', body:'Pull up and our team loads your bottles directly into your vehicle. No lifting ever.' },
-                { icon:'🏠', title:'Home Delivery', body:'We deliver to your door on a recurring schedule that fits your lifestyle.' },
-                { icon:'🔄', title:'Bottle Exchange', body:'Return your empties, pick up full ones. Seamless and eco-friendly every time.' },
-                { icon:'📅', title:'Flexible Scheduling', body:'Weekly, bi-weekly, or on-demand. Change any time, no fees, no contracts.' },
+                { icon:<StoreIcon size={20} />, title:'In-Store Pickup', body:'Bring your bottles in to 104-1505 Admirals Road. We fill any brand from 1 to 5 gallons, and our staff carry it out to your car.' },
+                { icon:<CarIcon size={20} />, title:'Home & Office Delivery', body:'We deliver to your home or office across Greater Victoria.' },
+                { icon:<ExchangeIcon size={20} />, title:'Bottle Exchange', body:'On delivery day, leave your empty bottles out for the driver.' },
+                { icon:<ClockIcon size={20} />, title:'Flexible Scheduling', body:'Choose delivery every two weeks, monthly, or on request.' },
               ].map((item,i)=>(
                 <div key={i} style={{ background:'#f8fafc', border:'1.5px solid rgba(41,171,226,.12)', borderRadius:14, padding:'22px 18px' }}>
-                  <div style={{ fontSize:28, marginBottom:12 }}>{item.icon}</div>
+                  <div style={{ marginBottom:12 }}><IconTile>{item.icon}</IconTile></div>
                   <h3 style={{ fontSize:14, fontWeight:700, color:'#1E3892', marginBottom:8 }}>{item.title}</h3>
                   <p style={{ fontSize:13, color:'#757575', lineHeight:1.65, margin:0 }}>{item.body}</p>
                 </div>
@@ -137,16 +140,16 @@ export default function DeliveryInfoPage() {
             </h2>
             <div style={{ borderRadius:14, overflow:'hidden', border:'1.5px solid rgba(41,171,226,.15)', marginBottom:24 }}>
               <div style={{ background:'#1E3892', padding:'10px 18px' }}>
-                <p style={{ fontSize:12, fontWeight:700, color:'#29ABE2', letterSpacing:'.1em', textTransform:'uppercase', margin:0 }}>Mon–Sat Open</p>
+                <p style={{ fontSize:12, fontWeight:700, color:'#29ABE2', letterSpacing:'.1em', textTransform:'uppercase', margin:0 }}>Open Mon to Sat</p>
               </div>
               {[
-                { day:'Monday', hours:'9:30 am – 6:00 pm' },
-                { day:'Tuesday', hours:'9:30 am – 6:00 pm' },
-                { day:'Wednesday', hours:'9:30 am – 6:00 pm' },
-                { day:'Thursday', hours:'9:30 am – 6:00 pm' },
-                { day:'Friday', hours:'9:30 am – 6:00 pm' },
-                { day:'Saturday', hours:'9:30 am – 5:00 pm' },
-                { day:'Sunday', hours:'Closed' },
+                { day:'Monday', hours:'9:30am to 6pm' },
+                { day:'Tuesday', hours:'9:30am to 6pm' },
+                { day:'Wednesday', hours:'9:30am to 6pm' },
+                { day:'Thursday', hours:'9:30am to 6pm' },
+                { day:'Friday', hours:'9:30am to 6pm' },
+                { day:'Saturday', hours:'9:30am to 5pm' },
+                { day:'Sunday & stat holidays', hours:'Closed' },
               ].map((row,i)=>(
                 <div key={i} className="del-hours-row" style={{ display:'flex', justifyContent:'space-between', padding:'9px 18px', fontSize:13 }}>
                   <span style={{ color:'#5a5a5a', fontWeight:500 }}>{row.day}</span>
@@ -155,40 +158,40 @@ export default function DeliveryInfoPage() {
               ))}
             </div>
             <div style={{ background:'#f0f7ff', borderRadius:14, padding:'20px 18px', border:'1.5px solid rgba(41,171,226,.15)' }}>
-              <p style={{ fontSize:13, fontWeight:700, color:'#1E3892', marginBottom:10 }}>📍 Find Us</p>
+              <p style={{ fontSize:13, fontWeight:700, color:'#1E3892', marginBottom:10, display:'flex', alignItems:'center', gap:8 }}><PinIcon size={15} /> Find Us</p>
               <p style={{ fontSize:13, color:'#757575', lineHeight:1.6, marginBottom:12 }}>104-1505 Admirals Road<br/>Victoria, BC V9A 2P8</p>
-              <a href="tel:2503812088" style={{ fontSize:14, fontWeight:700, color:'#29ABE2', textDecoration:'none', display:'block', marginBottom:6 }}>📞 250 381-2088</a>
+              <a href="tel:2503812088" style={{ fontSize:14, fontWeight:700, color:'#29ABE2', textDecoration:'none', display:'flex', alignItems:'center', gap:8, marginBottom:6 }}><PhoneIcon size={15} /> 250 381-2088</a>
               <a href="mailto:delivery@mtdougsprings.com" style={{ fontSize:13, color:'#757575', textDecoration:'none' }}>delivery@mtdougsprings.com</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* DELIVERY ZONES */}
+      {/* DELIVERY AREA */}
       <section style={{ padding:'80px 24px', background:'#f8fafc' }}>
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <div style={{ textAlign:'center', marginBottom:52 }}>
             <span style={{ fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.25em', textTransform:'uppercase', display:'block', marginBottom:12 }}>Coverage Area</span>
             <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#1E3892', letterSpacing:'-.02em', marginBottom:14 }}>
-              Delivery Zones
+              Where We Deliver
             </h2>
             <p style={{ color:'#757575', fontSize:15, maxWidth:440, margin:'0 auto' }}>
-              We cover most of Greater Victoria. Not sure? Give us a call — we do our best to accommodate.
+              Homes and offices across Greater Victoria. Not sure if we reach you? Give us a call.
             </p>
           </div>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))', gap:20 }}>
             {[
-              { zone:'Victoria Core', areas:'Downtown, James Bay, Fairfield, Fernwood, Cook St Village', freq:'2× per week', hot:true },
-              { zone:'Saanich', areas:'Quadra Village, Cedar Hill, Cordova Bay, Broadmead', freq:'Weekly', hot:false },
-              { zone:'View Royal / Esquimalt', areas:'Admirals Rd corridor, CFB Esquimalt, Gorge', freq:'Weekly', hot:false },
-              { zone:'Langford / Colwood', areas:'Langford, Colwood, Happy Valley, Belmont', freq:'Weekly', hot:false },
-              { zone:'Saanichton / Sidney', areas:'Central Saanich, North Saanich, Sidney', freq:'Bi-weekly', hot:false },
-              { zone:'Custom Route', areas:'Other areas — call us. We do our best to accommodate.', freq:'By arrangement', hot:false },
+              { zone:'Victoria', areas:'Homes and offices across the city.', tag:'Home & office', hot:true },
+              { zone:'Oak Bay', areas:'East to Oak Bay.', tag:'East', hot:false },
+              { zone:'Sidney', areas:'North up the Saanich Peninsula to Sidney.', tag:'North', hot:false },
+              { zone:'Westshore', areas:'Out to the Westshore communities.', tag:'West', hot:false },
+              { zone:'Sooke', areas:'As far west as Sooke.', tag:'West', hot:false },
+              { zone:'Not Sure?', areas:'Call 250 381-2088 or email delivery@mtdougsprings.com and we will let you know.', tag:'Ask us', hot:false },
             ].map((z,i)=>(
               <div key={i} className="del-zone" style={{ background:'#fff', border:`1.5px solid ${z.hot?'#29ABE2':'rgba(41,171,226,.15)'}`, borderRadius:16, padding:'24px 20px', cursor:'default' }}>
                 <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:10 }}>
                   <h3 style={{ fontSize:15, fontWeight:700, color:'#1E3892' }}>{z.zone}</h3>
-                  <span style={{ fontSize:11, fontWeight:700, color:z.hot?'#fff':'#29ABE2', padding:'3px 10px', borderRadius:100, background:z.hot?'#29ABE2':'rgba(41,171,226,.1)', whiteSpace:'nowrap', marginLeft:8 }}>{z.freq}</span>
+                  <span style={{ fontSize:11, fontWeight:700, color:z.hot?'#fff':'#29ABE2', padding:'3px 10px', borderRadius:4, background:z.hot?'#29ABE2':'rgba(41,171,226,.1)', whiteSpace:'nowrap', marginLeft:8 }}>{z.tag}</span>
                 </div>
                 <p style={{ fontSize:13, color:'#757575', lineHeight:1.6 }}>{z.areas}</p>
               </div>
@@ -225,19 +228,19 @@ export default function DeliveryInfoPage() {
       <section style={{ position:'relative', overflow:'hidden', padding:'80px 24px', background:'linear-gradient(135deg,#1E3892,#020f1f)', textAlign:'center' }}>
         <div style={{ position:'absolute', width:400, height:400, top:-100, left:-100, borderRadius:'50%', background:'rgba(41,171,226,.1)', animation:'del-pulse 8s ease-in-out infinite', pointerEvents:'none' }} />
         <div style={{ position:'relative', zIndex:2, maxWidth:680, margin:'0 auto' }}>
-          <span style={{ fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.25em', textTransform:'uppercase', display:'block', marginBottom:16 }}>Eco-Friendly Loop</span>
+          <span style={{ fontSize:11, fontWeight:700, color:'#29ABE2', letterSpacing:'.25em', textTransform:'uppercase', display:'block', marginBottom:16 }}>Bottle Deposit</span>
           <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#fff', letterSpacing:'-.02em', marginBottom:20 }}>
-            The Jug Deposit — Fully Refundable
+            The Bottle Deposit Is Refundable
           </h2>
-          <p style={{ fontSize:16, color:'rgba(255,255,255,.65)', lineHeight:1.8, marginBottom:40 }}>
-            Every jug carries a <strong style={{ color:'#29ABE2' }}>$10.00 deposit</strong>. When you return the empty jug we collect it, sanitize it, and fill it for the next customer. You get your $10 back — simple as that. No waste, no landfill.
+          <p style={{ fontSize:16, color:'rgba(255,255,255,.88)', lineHeight:1.8, marginBottom:40 }}>
+            Each bottle carries an <strong style={{ color:'#29ABE2' }}>initial refundable deposit</strong> when you start delivery. Call or email us for the current amount. We take e-transfer, online banking, EFT, cheque, Mastercard and Visa.
           </p>
           <div style={{ display:'flex', gap:12, justifyContent:'center', flexWrap:'wrap' }}>
-            <a href="tel:2503812088" className="del-cta-btn" style={{ padding:'14px 32px', borderRadius:8, background:'#29ABE2', color:'#fff', fontWeight:700, fontSize:15, textDecoration:'none' }}>
-              Call to Schedule — 250 381-2088
+            <a href="tel:2503812088" className="del-cta-btn" style={{ padding:'14px 32px', borderRadius:8, background:'#29ABE2', color:'#fff', fontWeight:700, fontSize:15, textDecoration:'none', display:'inline-flex', alignItems:'center', gap:8 }}>
+              <PhoneIcon size={16} /> Call 250 381-2088
             </a>
-            <a href="mailto:delivery@mtdougsprings.com" style={{ padding:'14px 32px', borderRadius:8, background:'rgba(255,255,255,.08)', border:'1.5px solid rgba(255,255,255,.2)', color:'#fff', fontWeight:600, fontSize:15, textDecoration:'none' }}>
-              Email Us
+            <a href="mailto:delivery@mtdougsprings.com" style={{ padding:'14px 32px', borderRadius:8, background:'rgba(255,255,255,.08)', border:'1.5px solid rgba(255,255,255,.2)', color:'#fff', fontWeight:600, fontSize:15, textDecoration:'none', display:'inline-flex', alignItems:'center', gap:8 }}>
+              <MailIcon size={16} /> Email Us
             </a>
           </div>
         </div>

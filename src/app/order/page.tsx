@@ -2,10 +2,11 @@ import Nav from '@/components/Nav';
 import OrderShop from '@/components/OrderShop';
 import Reviews from '@/components/Reviews';
 import Footer from '@/components/Footer';
+import { PhoneIcon, CarIcon } from '@/components/Icons';
 
 export const metadata: import("next").Metadata = {
   title: 'Order Purified Water Online | Mount Doug Springs Victoria',
-  description: 'Order purified or oxygenated water online. Choose 11.3L or 18.9L jugs, pre-pay bundles, accessories and coolers. Home delivery across Victoria, BC or drive-up at 104-1505 Admirals Road.',
+  description: 'Order purified or oxygenated water online. Choose 11.3L or 18.9L jugs, pre-pay bundles, accessories and coolers. Home and office delivery across Greater Victoria, BC, or in-store pickup at 104-1505 Admirals Road.',
   keywords: ['order water Victoria BC', 'buy purified water online Victoria', 'water delivery order Victoria', 'water jug refill Victoria', '18.9L water order BC'],
   alternates: { canonical: 'https://www.mtdougsprings.com/order' },
   openGraph: { title: 'Order Pure Water | Mount Doug Springs', description: 'Shop purified & oxygenated water. Delivery across Greater Victoria, BC.', url: 'https://www.mtdougsprings.com/order', type: 'website' },
@@ -30,14 +31,14 @@ export default function OrderPage() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))', gap:32 }}>
             {[
               {step:'1',title:'Add to Cart',body:'Select your jug size and quantity. Mix and match purified or oxygenated.'},
-              {step:'2',title:'Place Order',body:'Click "Place Order" and we receive your request immediately.'},
-              {step:'3',title:'We Confirm',body:'We call or email to confirm your delivery time and address. No surprises.'},
-              {step:'4',title:'Fresh Delivery',body:'Bottled the night before. Delivered to your door or loaded into your car.'},
+              {step:'2',title:'Place Order',body:'Click "Place Order" to send your order to us.'},
+              {step:'3',title:'We Confirm',body:'We call or email to confirm your delivery day and address.'},
+              {step:'4',title:'Fresh Delivery',body:'Bottled the evening before delivery and brought to your door. Or pick up in store and we carry it out to your car.'},
             ].map(s=>(
               <div key={s.step} className="ord-step" style={{ display:'flex', flexDirection:'column', alignItems:'center', textAlign:'center' }}>
                 <div className="ord-num" style={{ width:56, height:56, borderRadius:'50%', background:'#1E3892', color:'#fff', fontSize:20, fontWeight:800, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:18, boxShadow:'0 6px 24px rgba(30,56,146,.25)' }}>{s.step}</div>
                 <h3 style={{ fontSize:16, fontWeight:700, color:'#1E3892', marginBottom:10 }}>{s.title}</h3>
-                <p style={{ fontSize:14, color:'#757575', lineHeight:1.65 }}>{s.body}</p>
+                <p style={{ fontSize:14, color:'#6b7280', lineHeight:1.65 }}>{s.body}</p>
               </div>
             ))}
           </div>
@@ -48,16 +49,16 @@ export default function OrderPage() {
       <section style={{ padding:'40px 24px', background:'#f8fafc', borderTop:'1px solid #e2e8f0', borderBottom:'1px solid #e2e8f0' }}>
         <div style={{ maxWidth:900, margin:'0 auto', display:'flex', flexWrap:'wrap', gap:20, alignItems:'center', justifyContent:'space-between' }}>
           <div>
-            <p style={{ fontSize:16, fontWeight:700, color:'#1E3892', marginBottom:6 }}>🚚 Do we deliver to you?</p>
-            <p style={{ fontSize:14, color:'#757575', margin:0 }}>We cover Victoria, Saanich, Langford, Esquimalt, Colwood, Sidney & more. Call to confirm your address.</p>
+            <p style={{ fontSize:16, fontWeight:700, color:'#1E3892', marginBottom:6, display:'flex', alignItems:'center', gap:8 }}><CarIcon size={18} /> Do we deliver to you?</p>
+            <p style={{ fontSize:14, color:'#6b7280', margin:0 }}>We deliver across Greater Victoria, from Sooke to Sidney and Oak Bay to Westshore. Call to confirm your address.</p>
           </div>
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
             <a href="/delivery-info" style={{ padding:'11px 22px', borderRadius:8, background:'#1E3892', color:'#fff', fontWeight:700, fontSize:14, textDecoration:'none', display:'inline-flex', alignItems:'center', gap:8 }}>
               View Delivery Zones
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
-            <a href="tel:2503812088" style={{ padding:'11px 22px', borderRadius:8, background:'transparent', border:'1.5px solid rgba(30,56,146,.25)', color:'#1E3892', fontWeight:600, fontSize:14, textDecoration:'none' }}>
-              📞 250 381-2088
+            <a href="tel:2503812088" style={{ padding:'11px 22px', borderRadius:8, background:'transparent', border:'1.5px solid rgba(30,56,146,.25)', color:'#1E3892', fontWeight:600, fontSize:14, textDecoration:'none', display:'inline-flex', alignItems:'center', gap:8 }}>
+              <PhoneIcon size={15} /> 250 381-2088
             </a>
           </div>
         </div>
@@ -66,10 +67,10 @@ export default function OrderPage() {
       {/* TRUST STRIP */}
       <section style={{ padding:'52px 24px', background:'linear-gradient(135deg,#1E3892,#063a78)' }}>
         <div style={{ maxWidth:900, margin:'0 auto', display:'flex', flexWrap:'wrap', gap:40, justifyContent:'center' }}>
-          {[{num:'1,100+',label:'Delivery Customers'},{num:'5.0★',label:'Google Rating'},{num:'21+',label:'Years in Victoria'},{num:'$10',label:'Refundable Deposit'}].map((s,i)=>(
+          {[{num:'Since 2003',label:'Family owned and operated'},{num:'4.6★',label:'Google rating, 24 reviews'},{num:'Sooke to Sidney',label:'Delivery across Greater Victoria'},{num:'1 to 5 gal',label:'Bottles refilled in store'}].map((s,i)=>(
             <div key={i} style={{ textAlign:'center' }}>
               <div style={{ fontSize:28, fontWeight:800, color:'#29ABE2', lineHeight:1 }}>{s.num}</div>
-              <div style={{ fontSize:13, color:'rgba(255,255,255,.55)', marginTop:6, fontWeight:500 }}>{s.label}</div>
+              <div style={{ fontSize:13, color:'rgba(255,255,255,.88)', marginTop:6, fontWeight:500 }}>{s.label}</div>
             </div>
           ))}
         </div>

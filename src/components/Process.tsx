@@ -31,7 +31,7 @@ const cards = [
         <circle cx="13" cy="13" r="2.5" fill="white"/>
       </svg>
     ),
-    title: 'Eco-Friendly Loop',
+    title: 'Refillable Bottles',
     body: 'Refillable bottles with a refundable deposit, so you skip the single-use plastic. Bring yours back and we fill it again.',
   },
   {

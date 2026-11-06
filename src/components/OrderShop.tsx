@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
+import { DropIcon } from './Icons';
 
 const P = '#1E3892';
 const T = '#29ABE2';
@@ -9,21 +10,20 @@ const T = '#29ABE2';
 const CATEGORIES = ['All', 'Purified', 'Oxygenated', 'Emergency', 'Bundles', 'Coolers', 'Accessories'];
 
 const ALL_PRODUCTS = [
-  { id: 'water-18-9l',          category: 'Purified',     name: '18.9L Purified Water',         sub: '5-gallon · Multi-stage filtered',   price: 9.50,  deposit: 10, badge: 'Best Seller', noDeposit: false, img: '/p-purified-lg.jpg' },
-  { id: 'water-11-3l',          category: 'Purified',     name: '11.3L Purified Water',         sub: '3-gallon · Countertop-ready',       price: 6.50,  deposit: 10, badge: null,          noDeposit: false, img: '/p-purified-sm.jpg' },
-  { id: 'water-oxy-189',        category: 'Oxygenated',   name: '18.9L Oxygenated Water',       sub: '38–40 ppm dissolved O₂',           price: 10.50, deposit: 10, badge: '40ppm O₂',    noDeposit: false, img: '/p-oxy-lg.jpg' },
-  { id: 'water-oxy-113',        category: 'Oxygenated',   name: '11.3L Oxygenated Water',       sub: '38–40 ppm dissolved O₂',           price: 7.50,  deposit: 10, badge: '40ppm O₂',    noDeposit: false, img: '/p-oxy-sm.jpg' },
-  { id: 'water-emergency',      category: 'Emergency',    name: '18.9L Emergency Bottle',       sub: 'Sealed · Long shelf-life',          price: 15.00, deposit: 0,  badge: '72hr Kit',     noDeposit: true,  img: '/p-emergency.jpg' },
-  { id: 'bundle-purified-20x',  category: 'Bundles',      name: '20× Purified Prepay',          sub: '$9.00/jug · Save $10',             price: 180,   deposit: 0,  badge: 'Best Value',   noDeposit: true,  img: '/p-bundle-purified.jpg' },
-  { id: 'bundle-oxy-20x',       category: 'Bundles',      name: '20× Oxygenated Prepay',        sub: '$9.50/jug · Save $20',             price: 190,   deposit: 0,  badge: 'Save $20',     noDeposit: true,  img: '/p-oxy-lg.jpg' },
-  { id: 'cooler-standard',      category: 'Coolers',      name: 'Standard Top-Load Cooler',     sub: 'Hot & cold · Floor-standing',      price: 0,     deposit: 0,  badge: 'Ask In-Store', noDeposit: true,  img: '/p-cooler-standard.jpg' },
-  { id: 'cooler-primo-white',   category: 'Coolers',      name: 'Primo Top-Load White',         sub: 'Hot & cold · Primo brand',         price: 0,     deposit: 0,  badge: 'Ask In-Store', noDeposit: true,  img: '/p-cooler-white.png' },
-  { id: 'cooler-primo-stainless', category: 'Coolers',    name: 'Primo Bottom-Load Stainless',  sub: 'No lifting · Premium finish',      price: 0,     deposit: 0,  badge: 'Premium',      noDeposit: true,  img: '/p-cooler-stainless.png' },
-  { id: 'acc-crock-plain',      category: 'Accessories',  name: 'Plain Crock Dispenser',        sub: 'Ceramic · Classic style',          price: 80,    deposit: 0,  badge: null,           noDeposit: true,  img: '/p-crock-plain.jpg' },
-  { id: 'acc-crock-blue',       category: 'Accessories',  name: 'Ceramic Crock Blue Stripe',    sub: 'Ceramic · Decorative',             price: 80,    deposit: 0,  badge: null,           noDeposit: true,  img: '/p-crock-blue.jpg' },
-  { id: 'acc-pump-manual',      category: 'Accessories',  name: 'Manual Hand Pump',             sub: 'No electricity needed',            price: 30,    deposit: 0,  badge: null,           noDeposit: true,  img: '/p-pump-manual.jpg' },
-  { id: 'acc-pump-usb',         category: 'Accessories',  name: 'USB Rechargeable Pump',        sub: 'Button-activated dispenser',       price: 35,    deposit: 0,  badge: null,           noDeposit: true,  img: '/p-pump-usb.png' },
-  { id: 'acc-leak-alarm',       category: 'Accessories',  name: 'WiFi Leak Detection Alarm',    sub: 'Phone alerts · Connected',         price: 29,    deposit: 0,  badge: 'Smart',        noDeposit: true,  img: '/p-wifi-leak.png' },
+  { id: 'water-18-9l',          category: 'Purified',     name: '18.9L Purified Water',         sub: '5-gallon · Delivered',              price: 10.50, badge: null,           noDeposit: false, img: '/p-purified-lg.jpg' },
+  { id: 'water-11-3l',          category: 'Purified',     name: '11.3L Purified Water',         sub: '3-gallon · Delivered',              price: 7.50,  badge: null,           noDeposit: false, img: '/p-purified-sm.jpg' },
+  { id: 'water-oxy-189',        category: 'Oxygenated',   name: '18.9L Oxygenated Water',       sub: '35 to 40 ppm oxygen',               price: 11.50, badge: 'Oxygenated',   noDeposit: false, img: '/p-oxy-lg.jpg' },
+  { id: 'water-oxy-113',        category: 'Oxygenated',   name: '11.3L Oxygenated Water',       sub: '35 to 40 ppm oxygen',               price: 8.50,  badge: 'Oxygenated',   noDeposit: false, img: '/p-oxy-sm.jpg' },
+  { id: 'water-emergency',      category: 'Emergency',    name: '18.9L Emergency Bottle',       sub: 'Ask us about emergency water',      price: 0,     badge: null,           noDeposit: true,  img: '/p-emergency.jpg' },
+  { id: 'bundle-purified-20x',  category: 'Bundles',      name: '20× Purified Prepay',          sub: '$10 a bottle · Save $10',           price: 200,   badge: 'Best Value',   noDeposit: true,  img: '/p-bundle-purified.jpg' },
+  { id: 'bundle-oxy-20x',       category: 'Bundles',      name: '20× Oxygenated Prepay',        sub: '$11 a bottle · Save $10',           price: 220,   badge: 'Save $10',     noDeposit: true,  img: '/p-oxy-lg.jpg' },
+  { id: 'cooler-standard',      category: 'Coolers',      name: 'Standard Top-Load Cooler',     sub: 'Hot & cold · Floor-standing',       price: 0,     badge: 'Ask In-Store', noDeposit: true,  img: '/p-cooler-standard.jpg' },
+  { id: 'cooler-primo-white',   category: 'Coolers',      name: 'Top-Load Cooler, White',       sub: 'Hot & cold, or hot, room & cold',   price: 0,     badge: 'Ask In-Store', noDeposit: true,  img: '/p-cooler-white.png' },
+  { id: 'cooler-primo-stainless', category: 'Coolers',    name: 'Bottom-Load Cooler',           sub: 'Hot & cold, or hot, room & cold',   price: 0,     badge: 'Ask In-Store', noDeposit: true,  img: '/p-cooler-stainless.png' },
+  { id: 'acc-crock-plain',      category: 'Accessories',  name: 'Plain Crock Dispenser',        sub: 'Ceramic · Classic style',           price: 0,     badge: 'Ask In-Store', noDeposit: true,  img: '/p-crock-plain.jpg' },
+  { id: 'acc-crock-blue',       category: 'Accessories',  name: 'Ceramic Crock Blue Stripe',    sub: 'Ceramic · Decorative',              price: 0,     badge: 'Ask In-Store', noDeposit: true,  img: '/p-crock-blue.jpg' },
+  { id: 'acc-pump-manual',      category: 'Accessories',  name: 'Manual Hand Pump',             sub: 'No electricity needed',             price: 0,     badge: 'Ask In-Store', noDeposit: true,  img: '/p-pump-manual.jpg' },
+  { id: 'acc-pump-usb',         category: 'Accessories',  name: 'USB Rechargeable Pump',        sub: 'Button-activated dispenser',        price: 0,     badge: 'Ask In-Store', noDeposit: true,  img: '/p-pump-usb.png' },
 ];
 
 const SLIDES = [
@@ -31,9 +31,9 @@ const SLIDES = [
     cat: 'Purified',
     accent: T,
     bg: 'linear-gradient(130deg, #020f1f 0%, #1E3892 55%, #0a3d7a 100%)',
-    eyebrow: 'Most Popular',
-    title: "Victoria's Purest\nWater",
-    sub: '18.9L from $9.50 · Multi-stage filtered · Bottled fresh nightly',
+    eyebrow: '6-Step Process',
+    title: "Purified Water,\nBottled Fresh",
+    sub: '18.9L delivered for $10.50 · Reverse osmosis, UV and ozone · Bottled the evening before delivery',
     cta: 'Shop Purified Water',
     sideImg: '/bottle.png',
   },
@@ -41,9 +41,9 @@ const SLIDES = [
     cat: 'Oxygenated',
     accent: '#34d399',
     bg: 'linear-gradient(130deg, #020f1f 0%, #064e3b 50%, #1E3892 100%)',
-    eyebrow: '40+ ppm O₂',
+    eyebrow: '35 to 40 ppm Oxygen',
     title: 'Hyper-Oxygenated\nWater',
-    sub: '40× more dissolved oxygen than tap · Favoured by athletes · From $10.50',
+    sub: 'Holds four times the amount of oxygen · A lighter, smoother taste · From $8.50 delivered',
     cta: 'Shop Oxygenated',
     sideImg: null,
   },
@@ -53,21 +53,17 @@ const SLIDES = [
     bg: 'linear-gradient(130deg, #1E3892 0%, #0c2d6b 50%, #020f1f 100%)',
     eyebrow: 'Best Value',
     title: '20× Prepay\nBundles',
-    sub: 'Save up to $20 · Pre-pay for 20 fills · We track your credits on file',
+    sub: 'Prepay 20 bottles and save $10 · Purified $200 · Oxygenated $220',
     cta: 'Shop Bundles',
     sideImg: null,
   },
 ];
 
 const BADGE_COLOR: Record<string, string> = {
-  'Best Seller': P,
   'Best Value': '#059669',
-  'Save $20': '#059669',
-  '40ppm O₂': '#059669',
-  '72hr Kit': '#dc2626',
-  'Premium': '#7c3aed',
-  'Smart': '#0284c7',
-  'Ask In-Store': '#757575',
+  'Save $10': '#059669',
+  'Oxygenated': '#059669',
+  'Ask In-Store': '#4b5563',
 };
 
 export default function OrderShop() {
@@ -83,7 +79,7 @@ export default function OrderShop() {
   }, []);
 
   function handleAdd(p: typeof ALL_PRODUCTS[0]) {
-    addItem({ id: p.id, name: p.name, price: p.price, deposit: p.noDeposit ? 0 : 10 });
+    addItem({ id: p.id, name: p.name, price: p.price, deposit: 0 });
     setAddedId(p.id);
     setTimeout(() => setAddedId(null), 1300);
   }
@@ -119,13 +115,13 @@ export default function OrderShop() {
 
               {/* Text side */}
               <div style={{ maxWidth: 580 }}>
-                <span style={{ display: 'inline-block', padding: '4px 12px', borderRadius: 100, background: `${s.accent}22`, border: `1px solid ${s.accent}55`, fontSize: 10, fontWeight: 700, color: s.accent, letterSpacing: '.18em', textTransform: 'uppercase', marginBottom: 18 }}>
+                <span style={{ display: 'inline-block', padding: '4px 12px', borderRadius: 6, background: `${s.accent}22`, border: `1px solid ${s.accent}55`, fontSize: 10, fontWeight: 700, color: s.accent, letterSpacing: '.18em', textTransform: 'uppercase', marginBottom: 18 }}>
                   {s.eyebrow}
                 </span>
                 <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 900, color: '#fff', lineHeight: 1.05, letterSpacing: '-.035em', marginBottom: 16, whiteSpace: 'pre-line' }}>
                   {s.title}
                 </h2>
-                <p style={{ fontSize: 'clamp(13px, 1.5vw, 15px)', color: 'rgba(255,255,255,.68)', marginBottom: 28, lineHeight: 1.65 }}>{s.sub}</p>
+                <p style={{ fontSize: 'clamp(13px, 1.5vw, 15px)', color: 'rgba(255,255,255,.88)', marginBottom: 28, lineHeight: 1.65 }}>{s.sub}</p>
                 <button
                   onClick={() => setCategory(s.cat)}
                   style={{
@@ -190,7 +186,8 @@ export default function OrderShop() {
       {/* ── DEPOSIT NOTICE ── */}
       <div style={{ background: '#f0f9ff', borderBottom: '1px solid rgba(41,171,226,.15)', padding: '12px 24px', textAlign: 'center' }}>
         <p style={{ fontSize: 13, color: '#0369a1', margin: 0, fontWeight: 500 }}>
-          💧 <strong>New customer?</strong> All jugs require a one-time <strong>$10 refundable deposit</strong> — returned when you bring the jug back.
+          <span style={{ display: 'inline-flex', verticalAlign: 'middle', marginRight: 6 }}><DropIcon size={16} /></span>
+          <strong>New customer?</strong> There is an initial <strong>refundable deposit</strong> on each bottle.
         </p>
       </div>
 
@@ -213,7 +210,7 @@ export default function OrderShop() {
                     padding: '0 16px', height: 52, background: 'none',
                     border: 'none', borderBottom: category === cat ? `2.5px solid ${P}` : '2.5px solid transparent',
                     cursor: 'pointer', fontSize: 13, fontWeight: category === cat ? 700 : 500,
-                    color: category === cat ? P : '#757575',
+                    color: category === cat ? P : '#6b7280',
                     whiteSpace: 'nowrap', transition: 'color .15s, border-color .15s',
                     flexShrink: 0,
                   }}
@@ -248,12 +245,12 @@ export default function OrderShop() {
         {/* Product count + grid */}
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '28px 24px 80px' }}>
 
-          <p style={{ fontSize: 12, color: '#9E9E9E', fontWeight: 500, marginBottom: 20 }}>
+          <p style={{ fontSize: 12, color: '#6b7280', fontWeight: 500, marginBottom: 20 }}>
             {filtered.length} product{filtered.length !== 1 ? 's' : ''}{category !== 'All' ? ` in ${category}` : ''}
           </p>
 
           {filtered.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '72px 24px', color: '#9E9E9E', fontSize: 15 }}>No products found.</div>
+            <div style={{ textAlign: 'center', padding: '72px 24px', color: '#6b7280', fontSize: 15 }}>No products found.</div>
           ) : (
             <div className="ord-grid">
               {filtered.map((p, i) => (
@@ -273,7 +270,7 @@ export default function OrderShop() {
                     {p.badge && (
                       <span style={{
                         position: 'absolute', top: 10, left: 10,
-                        padding: '4px 10px', borderRadius: 100,
+                        padding: '4px 10px', borderRadius: 6,
                         background: BADGE_COLOR[p.badge] ?? T,
                         color: '#fff', fontSize: 10, fontWeight: 700, letterSpacing: '.06em',
                       }}>{p.badge}</span>
@@ -281,16 +278,16 @@ export default function OrderShop() {
                     {/* Category chip */}
                     <span style={{
                       position: 'absolute', top: 10, right: 10,
-                      padding: '3px 9px', borderRadius: 100,
+                      padding: '3px 9px', borderRadius: 6,
                       background: 'rgba(255,255,255,.9)',
-                      color: '#757575', fontSize: 10, fontWeight: 600, letterSpacing: '.05em',
+                      color: '#4b5563', fontSize: 10, fontWeight: 600, letterSpacing: '.05em',
                     }}>{p.category}</span>
                   </div>
 
                   {/* Product info */}
                   <div style={{ padding: '16px 18px 20px' }}>
                     <p style={{ fontSize: 15, fontWeight: 700, color: P, marginBottom: 4, lineHeight: 1.25 }}>{p.name}</p>
-                    <p style={{ fontSize: 12, color: '#9E9E9E', marginBottom: 16, lineHeight: 1.4 }}>{p.sub}</p>
+                    <p style={{ fontSize: 12, color: '#6b7280', marginBottom: 16, lineHeight: 1.4 }}>{p.sub}</p>
 
                     <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 8 }}>
                       {/* Price */}
@@ -299,11 +296,11 @@ export default function OrderShop() {
                           <>
                             <span style={{ fontSize: 20, fontWeight: 800, color: P, lineHeight: 1 }}>${p.price.toFixed(2)}</span>
                             {!p.noDeposit && (
-                              <span style={{ fontSize: 11, color: '#9E9E9E', display: 'block', marginTop: 3 }}>+ $10 refundable deposit</span>
+                              <span style={{ fontSize: 11, color: '#6b7280', display: 'block', marginTop: 3 }}>+ refundable bottle deposit</span>
                             )}
                           </>
                         ) : (
-                          <span style={{ fontSize: 13, color: '#757575', fontWeight: 600, lineHeight: 1 }}>See In-Store</span>
+                          <span style={{ fontSize: 13, color: '#4b5563', fontWeight: 600, lineHeight: 1 }}>Ask in store</span>
                         )}
                       </div>
 
