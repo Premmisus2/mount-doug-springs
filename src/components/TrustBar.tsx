@@ -4,12 +4,14 @@ import { useInView } from '@/hooks/useInView';
 
 const P = '#1E3892';
 
+// Only facts we can show a source for (Google listing, BC registry, their own sites).
+// BBB has never rated them, and no WorkSafeBC or chamber record was found, so those stay off.
 const badges = [
-  { icon: '★', label: 'BBB A+ Rated' },
-  { icon: '✓', label: 'WorkSafeBC Certified' },
-  { icon: '★', label: '5.0 Google Reviews' },
-  { icon: '◆', label: 'Chamber Member' },
+  { icon: '★', label: '4.6 Google Rating' },
   { icon: '♥', label: 'Family Owned Since 2003' },
+  { icon: '◆', label: 'Canadian Owned & Operated' },
+  { icon: '✓', label: 'Any Brand, 1 to 5 Gallons' },
+  { icon: '★', label: 'Sooke to Sidney Delivery' },
 ];
 
 export default function TrustBar() {

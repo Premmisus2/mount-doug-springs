@@ -142,45 +142,12 @@ export default function CartDrawer() {
                     </button>
                   </div>
 
-                  {/* Deposit toggle — only for water jugs (deposit-eligible) */}
+                  {/* Bottles: their site publishes a refundable deposit per bottle but not the amount */}
                   {item.id.startsWith('water-') && (
-                    <div style={{ padding: '10px 14px', background: item.deposit > 0 ? '#fff8f5' : '#f0fdfb', borderTop: '1px solid #e2e8f0' }}>
-                      <p style={{ fontSize: 11, fontWeight: 700, color: '#757575', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
-                        Bottle Security Credit
+                    <div style={{ padding: '10px 14px', background: '#f0fdfb', borderTop: '1px solid #e2e8f0' }}>
+                      <p style={{ fontSize: 12, color: '#4b5563', lineHeight: 1.5, margin: 0 }}>
+                        Have bottles in good shape? Leave them out for the driver. New bottles carry a refundable deposit, confirmed when we call.
                       </p>
-                      <div style={{ display: 'flex', gap: 8 }}>
-                        <button
-                          aria-pressed={item.deposit === 0}
-                          onClick={() => updateDeposit(item.id, 0)}
-                          style={{
-                            flex: 1, padding: '7px 8px', borderRadius: 7, cursor: 'pointer', fontSize: 12, fontWeight: 600,
-                            border: item.deposit === 0 ? `2px solid ${T}` : '2px solid #e2e8f0',
-                            background: item.deposit === 0 ? '#e0f7f8' : '#fff',
-                            color: item.deposit === 0 ? '#006d74' : '#757575',
-                            transition: 'all 0.15s',
-                          }}
-                        >
-                          🔄 Exchange (+$0)
-                        </button>
-                        <button
-                          aria-pressed={item.deposit === 10}
-                          onClick={() => updateDeposit(item.id, 10)}
-                          style={{
-                            flex: 1, padding: '7px 8px', borderRadius: 7, cursor: 'pointer', fontSize: 12, fontWeight: 600,
-                            border: item.deposit === 10 ? `2px solid ${O}` : '2px solid #e2e8f0',
-                            background: item.deposit === 10 ? '#fff8f5' : '#fff',
-                            color: item.deposit === 10 ? '#c04a1a' : '#757575',
-                            transition: 'all 0.15s',
-                          }}
-                        >
-                          🆕 New Bottle (+$10)
-                        </button>
-                      </div>
-                      {item.deposit > 0 && (
-                        <p style={{ fontSize: 11, color: '#9E9E9E', marginTop: 6 }}>
-                          +${(item.deposit * item.qty).toFixed(2)} Security Credit — <strong>fully refundable</strong> on return
-                        </p>
-                      )}
                     </div>
                   )}
                 </div>
@@ -200,7 +167,7 @@ export default function CartDrawer() {
               {totalDeposit > 0 && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 10px', borderRadius: 8, background: '#fff8f5', border: '1px solid #fed7c0' }}>
                   <span style={{ fontSize: 13, color: '#c04a1a', fontWeight: 600 }}>
-                    🔒 Bottle Security Credits
+                    Bottle deposits
                     <span style={{ fontWeight: 400, color: '#9E9E9E', fontSize: 12, display: 'block' }}>Fully refundable when returned</span>
                   </span>
                   <span style={{ fontSize: 14, fontWeight: 700, color: '#c04a1a' }}>+${totalDeposit.toFixed(2)}</span>
@@ -226,7 +193,7 @@ export default function CartDrawer() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#00c4db'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = O; (e.currentTarget as HTMLElement).style.transform = 'none'; }}
             >
-              Place Order — ${total.toFixed(2)}
+              Place Order · ${total.toFixed(2)}
             </a>
             <p style={{ fontSize: 12, color: '#9E9E9E', textAlign: 'center', marginTop: 10, lineHeight: 1.5 }}>
               Opens your email app. We'll call to confirm delivery &amp; collect payment.

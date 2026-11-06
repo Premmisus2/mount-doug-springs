@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Mount Doug Springs Victoria",
   },
   description:
-    "Victoria's #1 purified water store. Multi-stage filtered, oxygenated & emergency water. Drive-up filling, home delivery, and refillable 18.9L & 11.3L jugs. 104-1505 Admirals Road.",
+    "Purified and oxygenated water in Victoria, BC. Home and office delivery from Sooke to Sidney and Oak Bay to Westshore, and walk-in refills at The Ultimate Water Store, 104-1505 Admirals Road.",
   keywords: [
     "water store Victoria BC",
     "purified water Victoria",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   openGraph: {
     title: "Mount Doug Springs | The Ultimate Water Store in Victoria, BC",
-    description: "Victoria's #1 purified water store. Multi-stage filtered water, oxygenated water, and home delivery across Greater Victoria.",
+    description: "Purified and oxygenated water in Victoria, BC. Home and office delivery from Sooke to Sidney and Oak Bay to Westshore, and walk-in refills at The Ultimate Water Store, 104-1505 Admirals Road.",
     type: "website",
     url: "https://www.mtdougsprings.com",
     siteName: "Mount Doug Springs",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mount Doug Springs | Victoria's Ultimate Water Store",
-    description: "Premium purified & oxygenated water. Drive-up, delivery, and refill. Victoria, BC.",
+    description: "Purified and oxygenated water delivery and walk-in refills in Victoria, BC.",
   },
   alternates: {
     canonical: "https://www.mtdougsprings.com",
@@ -88,9 +88,9 @@ export default function RootLayout({
               {
                 "@type": ["LocalBusiness", "Store"],
                 "@id": "https://www.mtdougsprings.com/#business",
-                "name": "Mount Doug Springs — The Ultimate Water Store",
+                "name": "Mount Doug Springs, The Ultimate Water Store",
                 "alternateName": "Mount Doug Springs",
-                "description": "Victoria's premier purified water store offering multi-stage filtered water, hyper-oxygenated water, emergency water supply, water coolers, and accessories. Drive-up filling and home delivery across Greater Victoria, BC.",
+                "description": "Purified and oxygenated water in Victoria, BC. Home and office delivery from Sooke to Sidney and Oak Bay to Westshore, and walk-in refills at The Ultimate Water Store, 104-1505 Admirals Road.",
                 "url": "https://www.mtdougsprings.com",
                 "telephone": "+1-250-381-2088",
                 "email": "delivery@mtdougsprings.com",
@@ -99,7 +99,7 @@ export default function RootLayout({
                   "streetAddress": "104-1505 Admirals Road",
                   "addressLocality": "Victoria",
                   "addressRegion": "BC",
-                  "postalCode": "V9A 7B2",
+                  "postalCode": "V9A 2P8",
                   "addressCountry": "CA"
                 },
                 "geo": {
@@ -113,7 +113,7 @@ export default function RootLayout({
                 ],
                 "priceRange": "$",
                 "currenciesAccepted": "CAD",
-                "paymentAccepted": "Cash, Credit Card, Debit",
+                "paymentAccepted": "E-transfer, Online banking, EFT, Cheque, Mastercard, Visa",
                 "areaServed": [
                   "Victoria, BC", "Oak Bay, BC", "Saanich, BC", "Esquimalt, BC",
                   "View Royal, BC", "Langford, BC", "Colwood, BC", "Central Saanich, BC",
@@ -123,17 +123,11 @@ export default function RootLayout({
                   "@type": "OfferCatalog",
                   "name": "Water Products & Accessories",
                   "itemListElement": [
-                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "18.9L Purified Water", "description": "Multi-stage filtered purified drinking water in BPA-free 18.9L jugs." }, "price": "9.50", "priceCurrency": "CAD" },
-                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "11.3L Purified Water", "description": "Multi-stage filtered purified drinking water in BPA-free 11.3L jugs." }, "price": "6.50", "priceCurrency": "CAD" },
-                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "18.9L Hyper-Oxygenated Water", "description": "Water enriched with 38-40 ppm dissolved oxygen for enhanced hydration." }, "price": "10.50", "priceCurrency": "CAD" },
-                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "20x Purified Water Bundle", "description": "Pre-pay for 20 fills of 18.9L purified water. Save $10." }, "price": "180.00", "priceCurrency": "CAD" }
+                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "18.9L Purified Water, delivered" }, "price": "10.50", "priceCurrency": "CAD" },
+                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "11.3L Purified Water, delivered" }, "price": "7.50", "priceCurrency": "CAD" },
+                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "18.9L Oxygenated Water, delivered", "description": "35 to 40 ppm of oxygen." }, "price": "11.50", "priceCurrency": "CAD" },
+                    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "20 x 18.9L Purified Water, prepaid" }, "price": "200.00", "priceCurrency": "CAD" }
                   ]
-                },
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "5.0",
-                  "reviewCount": "200",
-                  "bestRating": "5"
                 },
                 "sameAs": [
                   "https://www.mtdougsprings.com"

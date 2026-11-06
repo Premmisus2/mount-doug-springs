@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { PhoneIcon } from './Icons';
 
 const P   = '#1E3892';   // Deep Pacific Navy
 const T   = '#29ABE2';   // Crystal Teal
@@ -98,7 +99,18 @@ export default function Nav() {
 
         {/* Right side */}
         <div className="hidden md:flex" style={{ alignItems: 'center', gap: 14, flexShrink: 0 }}>
-          <a href="tel:2503812088" style={{ fontSize: 12, fontWeight: 700, color: P, textDecoration: 'none', whiteSpace: 'nowrap', opacity: 0.8 }}>
+          <a
+            href="tel:2503812088"
+            style={{
+              border: `1.5px solid ${P}30`, borderRadius: 8, padding: '7px 14px',
+              display: 'flex', alignItems: 'center', gap: 7,
+              fontSize: 12, fontWeight: 700, color: P, textDecoration: 'none', whiteSpace: 'nowrap',
+              transition: 'all 0.2s',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = `${P}10`; (e.currentTarget as HTMLElement).style.borderColor = P; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.borderColor = `${P}30`; }}
+          >
+            <PhoneIcon size={14} color={P} />
             250 381-2088
           </a>
 
@@ -196,7 +208,7 @@ export default function Nav() {
             );
           })}
           <a href="tel:2503812088" style={{ display: 'block', marginTop: 16, padding: '12px 0', textAlign: 'center', borderRadius: 8, background: O, color: P, fontWeight: 800, fontSize: 15, textDecoration: 'none' }}>
-            📞 Call 250 381-2088
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}><PhoneIcon size={16} /> Call 250 381-2088</span>
           </a>
         </div>
       )}

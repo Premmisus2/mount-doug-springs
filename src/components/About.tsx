@@ -6,11 +6,12 @@ const P = '#1E3892';
 const T = '#29ABE2';
 const CTA = '#29ABE2';
 
+// From their archived About page (mtdougsprings.com, 2010 and 2019 snapshots) and the BC registry (2003-02-14).
 const milestones = [
-  { year: '1975', label: 'Arrived in Victoria', detail: 'Wes Treleaven first moved to Victoria, BC — and spotted a property that would change everything.' },
-  { year: '1998', label: 'Dream Became Reality', detail: 'Wes acquired the Mount Douglas Springs property. The dream he had carried for over two decades finally came to life.' },
-  { year: '2021', label: '1,100+ Customers', detail: 'Mount Doug Springs had grown to serve over 1,100 bottled water delivery customers across Greater Victoria.' },
-  { year: 'Today', label: 'The Ultimate Water Store', detail: 'Now at 104-1505 Admirals Road, bottling fresh the evening before every delivery. Serving Victoria and beyond.' },
+  { year: '1975', label: 'Arrived in Victoria', detail: 'Wes Treleaven moved to Victoria, BC, and spotted a property near Mount Douglas that became his dream.' },
+  { year: '1998', label: 'Dream Became Reality', detail: 'Wes moved onto the property. The name came from the natural springs on the west slope of Mount Douglas.' },
+  { year: '2003', label: 'Mount Doug Springs Begins', detail: 'Wes started a cottage industry, delivering purified drinking water to friends and neighbours.' },
+  { year: 'Today', label: 'The Ultimate Water Store', detail: 'Now at 104-1505 Admirals Road, bottling fresh the evening before every delivery, from Sooke to Sidney.' },
 ];
 
 export default function About() {
@@ -36,10 +37,10 @@ export default function About() {
               fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', fontWeight: 600,
               color: P, letterSpacing: '-0.02em', lineHeight: 1.12, marginBottom: 16,
             }}>
-              A Victoria Story, 21+ Years in the Making
+              A Victoria Story, 20+ Years in the Making
             </h2>
             <p style={{ fontSize: 16, color: '#757575', maxWidth: 540, margin: '0 auto', lineHeight: 1.7 }}>
-              Family-owned, community-rooted, and deeply committed to delivering the purest water in Greater Victoria.
+              Family owned since 2003, and still run by the founder, Wes Treleaven.
             </p>
           </div>
         </ScrollReveal>
@@ -101,7 +102,7 @@ export default function About() {
               border: `1.5px solid rgba(41,171,226,0.18)`,
               textAlign: 'center',
             }}>
-              <p style={{ fontSize: 22, fontWeight: 800, color: T, margin: 0, lineHeight: 1 }}>21+</p>
+              <p style={{ fontSize: 22, fontWeight: 800, color: T, margin: 0, lineHeight: 1 }}>20+</p>
               <p style={{ fontSize: 10, color: '#757575', margin: '3px 0 0', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Years Serving<br/>Victoria</p>
             </div>
           </div>
@@ -122,13 +123,13 @@ export default function About() {
             </h3>
 
             <p style={{ fontSize: 15, color: '#5a5a5a', lineHeight: 1.8, marginBottom: 16 }}>
-              When Wes Treleaven first arrived in Victoria in 1975, he spotted a property near Mount Douglas that captured his imagination. Over two decades later, in 1998, that dream became reality — and <strong style={{ color: P }}>Mount Doug Springs was born</strong>.
+              When Wes Treleaven first arrived in Victoria in 1975, he spotted a property near Mount Douglas that captured his imagination. In 1998 that dream became reality. The natural springs on the mountain's west slope gave him the name, and in 2003 <strong style={{ color: P }}>Mount Doug Springs was born</strong>: a cottage industry delivering purified drinking water to friends and neighbours.
             </p>
             <p className="mobile-hide" style={{ fontSize: 15, color: '#5a5a5a', lineHeight: 1.8, marginBottom: 16 }}>
-              What started as a passion for delivering genuinely pure water to Victoria families grew into Greater Victoria's most trusted water store. By 2021, Mount Doug Springs was proudly serving <strong style={{ color: P }}>over 1,100 delivery customers</strong> across Saanich, Oak Bay, Esquimalt, Langford, and beyond.
+              It grew from there. By 2010 Mount Doug Springs had <strong style={{ color: P }}>over 450 delivery customers</strong> across Greater Victoria, and today we deliver from Sooke to Sidney and Oak Bay to Westshore.
             </p>
             <p style={{ fontSize: 15, color: '#5a5a5a', lineHeight: 1.8, marginBottom: 32 }}>
-              Today, from <strong style={{ color: P }}>104-1505 Admirals Road</strong>, the team bottles your water fresh the evening before delivery. Every jug is sanitized, filled, and loaded for you. <em>That's the Mount Doug difference.</em>
+              Today, from <strong style={{ color: P }}>104-1505 Admirals Road</strong>, the team bottles your water fresh the evening before delivery. Every bottle is filled fresh and carried out for you. <em>That's the Mount Doug difference.</em>
             </p>
 
             {/* Trust indicators */}
@@ -138,9 +139,9 @@ export default function About() {
               borderTop: `1px solid rgba(41,171,226,0.15)`,
             }}>
               {[
-                { num: '1,100+', label: 'Delivery Customers' },
-                { num: '5.0 ★', label: 'Google Rating' },
-                { num: '21+',   label: 'Years in Victoria' },
+                { num: '2003', label: 'Family Owned Since' },
+                { num: '4.6 ★', label: 'Google Rating' },
+                { num: '20+',   label: 'Years in Victoria' },
               ].map((stat, i) => (
                 <div key={i} style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: 20, fontWeight: 800, color: T, margin: 0, lineHeight: 1 }}>{stat.num}</p>

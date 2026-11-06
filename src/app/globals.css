@@ -128,11 +128,6 @@ body {
 }
 
 /* ── Freshness pulse ── */
-@keyframes fresh-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-  50%       { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-}
-.fresh-dot { animation: fresh-pulse 2s ease-in-out infinite; }
 
 /* ── Utility: show/hide by screen size ── */
 .mobile-only { display: none !important; }
@@ -146,6 +141,8 @@ body {
 
   /* Section vertical padding reduction */
   section { padding-top: 56px !important; padding-bottom: 56px !important; }
+  /* page heroes sit under the fixed menu (63px): keep their label clear of it */
+  section.page-hero { padding-top: 104px !important; }
 
   /* ── Hero ── */
   .hero-video { object-position: 58% center !important; }
@@ -211,7 +208,6 @@ body {
 
 /* ── Very small phones ── */
 @media (max-width: 480px) {
-  .hero-freshness { display: none !important; }
   .hero-logo { display: none !important; }
   .footer-grid { grid-template-columns: 1fr !important; }
 }

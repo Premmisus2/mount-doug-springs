@@ -14,10 +14,10 @@ const ALL_PRODUCTS = [
     id: 'water-18-9l',
     category: 'Purified',
     name: '18.9L Purified Water',
-    sub: '5-gallon · Multi-stage filtered',
-    price: 9.50,
+    sub: '5-gallon · Delivered',
+    price: 10.50,
     deposit: 10,
-    badge: 'Best Seller',
+    badge: null,
     noDeposit: false,
     img: '/p-purified-lg.jpg',
   },
@@ -25,8 +25,8 @@ const ALL_PRODUCTS = [
     id: 'water-11-3l',
     category: 'Purified',
     name: '11.3L Purified Water',
-    sub: '3-gallon · Countertop-ready',
-    price: 6.50,
+    sub: '3-gallon · Delivered',
+    price: 7.50,
     deposit: 10,
     badge: null,
     noDeposit: false,
@@ -36,10 +36,10 @@ const ALL_PRODUCTS = [
     id: 'water-oxy-189',
     category: 'Oxygenated',
     name: '18.9L Oxygenated Water',
-    sub: '38–40 ppm dissolved O₂',
-    price: 10.50,
+    sub: '35 to 40 ppm oxygen',
+    price: 11.50,
     deposit: 10,
-    badge: '40ppm O₂',
+    badge: 'Oxygenated',
     noDeposit: false,
     img: '/p-oxy-lg.jpg',
   },
@@ -47,10 +47,10 @@ const ALL_PRODUCTS = [
     id: 'water-oxy-113',
     category: 'Oxygenated',
     name: '11.3L Oxygenated Water',
-    sub: '38–40 ppm dissolved O₂',
-    price: 7.50,
+    sub: '35 to 40 ppm oxygen',
+    price: 8.50,
     deposit: 10,
-    badge: '40ppm O₂',
+    badge: 'Oxygenated',
     noDeposit: false,
     img: '/p-oxy-sm.jpg',
   },
@@ -58,10 +58,10 @@ const ALL_PRODUCTS = [
     id: 'water-emergency',
     category: 'Emergency',
     name: '18.9L Emergency Bottle',
-    sub: 'Sealed · Long shelf-life',
-    price: 15.00,
+    sub: 'Ask us about emergency water',
+    price: 0,
     deposit: 0,
-    badge: '72hr Kit',
+    badge: null,
     noDeposit: true,
     img: '/p-emergency.jpg',
   },
@@ -69,8 +69,8 @@ const ALL_PRODUCTS = [
     id: 'bundle-purified-20x',
     category: 'Bundles',
     name: '20× Purified Prepay',
-    sub: '$9.00/jug · Save $10',
-    price: 180,
+    sub: '$10 a bottle · Save $10',
+    price: 200,
     deposit: 0,
     badge: 'Best Value',
     noDeposit: true,
@@ -80,10 +80,10 @@ const ALL_PRODUCTS = [
     id: 'bundle-oxy-20x',
     category: 'Bundles',
     name: '20× Oxygenated Prepay',
-    sub: '$9.50/jug · Save $20',
-    price: 190,
+    sub: '$11 a bottle · Save $10',
+    price: 220,
     deposit: 0,
-    badge: 'Save $20',
+    badge: 'Save $10',
     noDeposit: true,
     img: '/p-oxy-lg.jpg',
   },
@@ -101,8 +101,8 @@ const ALL_PRODUCTS = [
   {
     id: 'cooler-primo-white',
     category: 'Coolers',
-    name: 'Primo Top-Load White',
-    sub: 'Hot & cold · Primo brand',
+    name: 'Top-Load Cooler, White',
+    sub: 'Hot & cold, or hot, room & cold',
     price: 0,
     deposit: 0,
     badge: 'Ask In-Store',
@@ -112,11 +112,11 @@ const ALL_PRODUCTS = [
   {
     id: 'cooler-primo-stainless',
     category: 'Coolers',
-    name: 'Primo Bottom-Load Stainless',
-    sub: 'No lifting · Premium finish',
+    name: 'Bottom-Load Cooler',
+    sub: 'Hot & cold, or hot, room & cold',
     price: 0,
     deposit: 0,
-    badge: 'Premium',
+    badge: 'Ask In-Store',
     noDeposit: true,
     img: '/p-cooler-stainless.png',
   },
@@ -125,9 +125,9 @@ const ALL_PRODUCTS = [
     category: 'Accessories',
     name: 'Plain Crock Dispenser',
     sub: 'Ceramic · Classic style',
-    price: 80,
+    price: 0,
     deposit: 0,
-    badge: null,
+    badge: 'Ask In-Store',
     noDeposit: true,
     img: '/p-crock-plain.jpg',
   },
@@ -136,9 +136,9 @@ const ALL_PRODUCTS = [
     category: 'Accessories',
     name: 'Ceramic Crock Blue Stripe',
     sub: 'Ceramic · Decorative',
-    price: 80,
+    price: 0,
     deposit: 0,
-    badge: null,
+    badge: 'Ask In-Store',
     noDeposit: true,
     img: '/p-crock-blue.jpg',
   },
@@ -147,9 +147,9 @@ const ALL_PRODUCTS = [
     category: 'Accessories',
     name: 'Manual Hand Pump',
     sub: 'No electricity needed',
-    price: 30,
+    price: 0,
     deposit: 0,
-    badge: null,
+    badge: 'Ask In-Store',
     noDeposit: true,
     img: '/p-pump-manual.jpg',
   },
@@ -158,22 +158,11 @@ const ALL_PRODUCTS = [
     category: 'Accessories',
     name: 'USB Rechargeable Pump',
     sub: 'Button-activated dispenser',
-    price: 35,
+    price: 0,
     deposit: 0,
-    badge: null,
+    badge: 'Ask In-Store',
     noDeposit: true,
     img: '/p-pump-usb.png',
-  },
-  {
-    id: 'acc-leak-alarm',
-    category: 'Accessories',
-    name: 'WiFi Leak Detection Alarm',
-    sub: 'Phone alerts · Connected',
-    price: 29,
-    deposit: 0,
-    badge: 'Smart',
-    noDeposit: true,
-    img: '/p-wifi-leak.png',
   },
 ];
 
@@ -208,9 +197,9 @@ export default function Products() {
 
         {/* Section label */}
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <p style={{ fontSize: 11, fontWeight: 700, color: T, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 8 }}>Online Store</p>
+          <p style={{ fontSize: 11, fontWeight: 700, color: T, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 8 }}>Order Online</p>
           <h2 style={{ fontFamily: 'var(--font-fraunces), serif', fontSize: 'clamp(1.8rem,3vw,2.6rem)', fontWeight: 600, color: P, marginBottom: 0 }}>
-            Shop Pure Water
+            Order Your Water
           </h2>
         </div>
 
@@ -293,10 +282,10 @@ export default function Products() {
                         <p className="mds-card-sub">{p.sub}</p>
                         <div className="mds-card-footer">
                           <span className="mds-card-price">
-                            ${p.price.toFixed(2)}
-                            {!p.noDeposit && <span className="mds-card-dep"> +$10 dep</span>}
+                            {p.price > 0 ? `$${p.price.toFixed(2)}` : 'Ask in store'}
+                            {p.price > 0 && !p.noDeposit && <span className="mds-card-dep"> + deposit</span>}
                           </span>
-                          <button
+                          {p.price > 0 && <button
                             className={`mds-add-btn${addedId === p.id ? ' mds-add-btn--added' : ''}`}
                             aria-label={`Add ${p.name} to cart`}
                             onClick={() => handleAdd(p)}
@@ -316,7 +305,7 @@ export default function Products() {
                                 Add
                               </>
                             )}
-                          </button>
+                          </button>}
                         </div>
                       </div>
                     </div>
@@ -421,7 +410,7 @@ export default function Products() {
               aria-label="Open cart to place order"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              {items.length > 0 ? `Place Order — $${total.toFixed(2)}` : 'View Cart'}
+              {items.length > 0 ? `Place Order · $${total.toFixed(2)}` : 'View Cart'}
             </button>
           </div>
 

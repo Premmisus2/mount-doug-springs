@@ -1,13 +1,21 @@
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import { PhoneIcon, StoreIcon, DropIcon, CarIcon, ExchangeIcon, BottleIcon, IconTile } from '@/components/Icons';
 
 export const metadata: import("next").Metadata = {
-  title: 'Hyper-Oxygenated Water Victoria BC | 40ppm O₂ | Mount Doug Springs',
-  description: 'Buy hyper-oxygenated water in Victoria BC. 38-40 ppm dissolved oxygen — up to 40x more than tap water. Supports athletic recovery, mental clarity, and superior hydration. In-store & delivery.',
-  keywords: ['oxygenated water Victoria BC', 'hyper oxygenated water Victoria', 'oxygen water BC', 'O2 water Victoria', 'oxygen enriched water Canada', 'oxygenated water athletes Victoria', 'buy oxygenated water Victoria'],
+  title: 'Hyper-Oxygenated Water Victoria BC | Mount Doug Springs',
+  description: 'Hyper-oxygenated water in Victoria BC, holding 35 to 40 ppm of oxygen, with a lighter, smoother taste. Delivered to homes and offices across Greater Victoria, or filled in store at 104-1505 Admirals Road.',
+  keywords: ['oxygenated water Victoria BC', 'hyper oxygenated water Victoria', 'oxygen water BC', 'O2 water Victoria', 'oxygen enriched water Canada', 'buy oxygenated water Victoria'],
   alternates: { canonical: 'https://www.mtdougsprings.com/hyper-oxygenated-water' },
-  openGraph: { title: 'Hyper-Oxygenated Water 40ppm | Victoria BC', description: 'Water with 40x more dissolved oxygen than tap water. Favoured by athletes in Victoria, BC.', url: 'https://www.mtdougsprings.com/hyper-oxygenated-water', type: 'website' },
+  openGraph: { title: 'Hyper-Oxygenated Water | Victoria BC', description: 'Water holding 35 to 40 ppm of oxygen. Delivered across Greater Victoria or filled in store.', url: 'https://www.mtdougsprings.com/hyper-oxygenated-water', type: 'website' },
 };
+
+const FAQS = [
+  { q:'How much oxygen is in it?', a:'Our hyper-oxygenated water holds 35 to 40 ppm of oxygen. A proprietary process nano-sizes the oxygen molecules, so it holds four times the amount of oxygen.' },
+  { q:'What does it taste like?', a:'Lighter and smoother. The easiest way to find out is to try a bottle.' },
+  { q:'How much does it cost?', a:'Delivered, it is $11.50 for an 18.9L (5 gallon) bottle and $8.50 for an 11.3L (3 gallon) bottle. Prepay 20 x 18.9L for $220, which is $11 each. In store, oxygenated is 50 cents more per bottle than purified.' },
+  { q:'Where can I get it?', a:'We deliver to homes and offices across Greater Victoria, from Sooke to Sidney and Oak Bay to Westshore. Or fill up in store at 104-1505 Admirals Road, View Royal.' },
+];
 
 export default function HyperOxygenatedPage() {
   return (
@@ -17,13 +25,7 @@ export default function HyperOxygenatedPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "Is hyper-oxygenated water safe to drink every day?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hyper-oxygenated water is simply purified water with additional dissolved oxygen. There are no known adverse effects from daily consumption." } },
-          { "@type": "Question", "name": "How long does oxygen stay in oxygenated water?", "acceptedAnswer": { "@type": "Answer", "text": "Once opened, oxygen slowly dissipates. We recommend consuming within 24–48 hours of opening for best effect." } },
-          { "@type": "Question", "name": "What is the difference between oxygenated water and sparkling water?", "acceptedAnswer": { "@type": "Answer", "text": "Sparkling water contains dissolved carbon dioxide (CO₂). Hyper-oxygenated water contains dissolved oxygen (O₂) with no carbonation — it looks and tastes like regular water." } },
-          { "@type": "Question", "name": "How much dissolved oxygen does Mount Doug Springs oxygenated water contain?", "acceptedAnswer": { "@type": "Answer", "text": "Our hyper-oxygenated water contains 38–40 ppm dissolved oxygen, up to 40 times more than regular tap water." } },
-          { "@type": "Question", "name": "Where can I buy hyper-oxygenated water in Victoria BC?", "acceptedAnswer": { "@type": "Answer", "text": "At Mount Doug Springs — 104-1505 Admirals Road, Victoria BC, or order online for home delivery." } }
-        ]
+        "mainEntity": FAQS.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
       })}} />
 
       <style>{`
@@ -39,30 +41,25 @@ export default function HyperOxygenatedPage() {
       `}</style>
 
       {/* HERO */}
-      <section style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 40%,#064e3b 100%)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:500, height:500, top:-100, left:-130, borderRadius:'50%', background:'rgba(5,150,105,.1)', animation:'oxy-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', width:300, height:300, bottom:-80, right:-60, borderRadius:'50%', background:'rgba(41,171,226,.08)', animation:'oxy-pulse 5s ease-in-out infinite 2s', pointerEvents:'none' }} />
-        {[{s:8,l:'8%',d:'0s'},{s:12,l:'18%',d:'.8s'},{s:6,l:'28%',d:'1.6s'},{s:10,r:'12%',d:'.4s'},{s:7,r:'22%',d:'1.2s'},{s:11,r:'32%',d:'2s'},{s:9,l:'50%',d:'1s'}].map((b,i)=>(
-          <div key={i} style={{ position:'absolute', bottom:80, left:b.l, right:b.r, width:b.s, height:b.s, borderRadius:'50%', border:'1.5px solid rgba(52,211,153,.6)', animation:`oxy-bubble 3s ease-in infinite`, animationDelay:b.d, pointerEvents:'none' }} />
-        ))}
+      <section className="page-hero" style={{ position:'relative', overflow:'hidden', paddingTop:140, paddingBottom:110, background:'linear-gradient(160deg,#020f1f 0%,#1E3892 40%,#064e3b 100%)', textAlign:'center' }}>
 
         <div style={{ position:'relative', zIndex:2, padding:'0 24px' }}>
-          <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:100, background:'rgba(52,211,153,.15)', border:'1px solid rgba(52,211,153,.35)', fontSize:11, fontWeight:700, color:'#34d399', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'oxy-rise .6s ease both' }}>
+          <span style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'6px 18px', borderRadius:4, background:'rgba(52,211,153,.15)', border:'1px solid rgba(52,211,153,.35)', fontSize:11, fontWeight:700, color:'#34d399', letterSpacing:'.15em', textTransform:'uppercase', marginBottom:24, animation:'oxy-rise .6s ease both' }}>
             <span style={{ width:6, height:6, borderRadius:'50%', background:'#34d399', display:'inline-block' }} />
-            Next-Level Hydration
+            Oxygen-Infused Water · Victoria BC
           </span>
-          <h1 style={{ fontSize:'clamp(2.2rem,5vw,3.8rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'oxy-rise .7s ease both .1s' }}>
+          <h1 style={{ fontSize:'clamp(1.9rem,4vw,2.9rem)', fontWeight:800, lineHeight:1.08, letterSpacing:'-.035em', color:'#fff', marginBottom:20, animation:'oxy-rise .7s ease both .1s' }}>
             Hyper-Oxygenated{' '}
             <span style={{ background:'linear-gradient(90deg,#34d399,#29ABE2)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>Water</span>
           </h1>
-          <p style={{ fontSize:17, color:'rgba(255,255,255,.7)', maxWidth:560, margin:'0 auto 48px', lineHeight:1.7, animation:'oxy-rise .7s ease both .2s' }}>
-            Water enriched with dissolved oxygen at 40+ ppm — up to 40× the concentration found in regular tap water. Favoured by athletes, wellness enthusiasts, and anyone who wants to hydrate smarter.
+          <p style={{ fontSize:17, color:'rgba(255,255,255,.88)', maxWidth:560, margin:'0 auto 48px', lineHeight:1.7, animation:'oxy-rise .7s ease both .2s' }}>
+            Water holding 35 to 40 ppm of oxygen, made with a proprietary process that nano-sizes the oxygen molecules. It has a lighter, smoother taste.
           </p>
           <div style={{ display:'flex', gap:20, justifyContent:'center', flexWrap:'wrap', animation:'oxy-rise .7s ease both .3s' }}>
-            {[{value:'40+ ppm',label:'Dissolved O₂'},{value:'40×',label:'vs Tap Water'},{value:'100%',label:'Chemical-Free'},{value:'5×',label:'Faster Recovery'}].map((stat,i)=>(
+            {[{value:'35 to 40',label:'ppm of Oxygen'},{value:'4×',label:'The Oxygen'},{value:'$11.50',label:'18.9L Delivered'},{value:'+50¢',label:'In Store, per Bottle'}].map((stat,i)=>(
               <div key={i} className="oxy-stat" style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(52,211,153,.2)', borderRadius:16, padding:'20px 24px', backdropFilter:'blur(8px)' }}>
                 <div style={{ fontSize:26, fontWeight:800, color:'#34d399', lineHeight:1 }}>{stat.value}</div>
-                <div style={{ fontSize:12, color:'rgba(255,255,255,.55)', marginTop:6, fontWeight:500 }}>{stat.label}</div>
+                <div style={{ fontSize:12, color:'rgba(255,255,255,.8)', marginTop:6, fontWeight:500 }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -81,30 +78,34 @@ export default function HyperOxygenatedPage() {
       <section style={{ padding:'80px 24px', background:'#fff' }}>
         <div style={{ maxWidth:880, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr', gap:56, alignItems:'center' }} className="oxy-science-grid">
           <div>
-            <span style={{ fontSize:11, fontWeight:700, color:'#059669', letterSpacing:'.2em', textTransform:'uppercase', display:'block', marginBottom:14 }}>The Science</span>
+            <span style={{ fontSize:11, fontWeight:700, color:'#059669', letterSpacing:'.2em', textTransform:'uppercase', display:'block', marginBottom:14 }}>The Basics</span>
             <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.7rem,3vw,2.4rem)', fontWeight:600, color:'#1E3892', letterSpacing:'-.02em', marginBottom:20, lineHeight:1.15 }}>
               What Is Hyper-Oxygenated Water?
             </h2>
             <p style={{ fontSize:15, color:'#5a5a5a', lineHeight:1.8, marginBottom:18 }}>
-              Hyper-oxygenated water is purified water infused with a high concentration of dissolved oxygen molecules under pressure — reaching 40+ ppm, compared to just 1–2 ppm in regular tap water.
+              It is water that holds 35 to 40 ppm of oxygen. A proprietary process nano-sizes the oxygen molecules, so the water holds four times the amount of oxygen.
             </p>
             <p style={{ fontSize:15, color:'#5a5a5a', lineHeight:1.8, marginBottom:28 }}>
-              The oxygen is absorbed through the gastrointestinal tract into the bloodstream. It contains zero additives, preservatives, or chemicals — just ultra-pure water and oxygen.
+              It has a lighter, smoother taste. As Seaweed Hero put it in a Google review: &ldquo;I like to pay 50 cents extra for 5 gallons of Oxygen Infused H2O.&rdquo;
             </p>
             {/* Price callout */}
             <div style={{ background:'linear-gradient(135deg,rgba(5,150,105,.08),rgba(41,171,226,.06))', border:'1.5px solid rgba(5,150,105,.2)', borderRadius:14, padding:'20px 22px', marginBottom:24 }}>
-              <p style={{ fontSize:12, fontWeight:700, color:'#059669', textTransform:'uppercase', letterSpacing:'.1em', marginBottom:8 }}>Pricing</p>
+              <p style={{ fontSize:12, fontWeight:700, color:'#059669', textTransform:'uppercase', letterSpacing:'.1em', marginBottom:8 }}>Delivery Pricing</p>
               <div style={{ display:'flex', gap:24, flexWrap:'wrap' }}>
                 <div>
-                  <p style={{ fontSize:22, fontWeight:800, color:'#1E3892', margin:0, lineHeight:1 }}>$10.50</p>
-                  <p style={{ fontSize:12, color:'#757575', margin:'4px 0 0' }}>18.9L jug</p>
+                  <p style={{ fontSize:22, fontWeight:800, color:'#1E3892', margin:0, lineHeight:1 }}>$11.50</p>
+                  <p style={{ fontSize:12, color:'#6b7280', margin:'4px 0 0' }}>18.9L bottle</p>
                 </div>
                 <div>
-                  <p style={{ fontSize:22, fontWeight:800, color:'#1E3892', margin:0, lineHeight:1 }}>$7.50</p>
-                  <p style={{ fontSize:12, color:'#757575', margin:'4px 0 0' }}>11.3L jug</p>
+                  <p style={{ fontSize:22, fontWeight:800, color:'#1E3892', margin:0, lineHeight:1 }}>$8.50</p>
+                  <p style={{ fontSize:12, color:'#6b7280', margin:'4px 0 0' }}>11.3L bottle</p>
+                </div>
+                <div>
+                  <p style={{ fontSize:22, fontWeight:800, color:'#1E3892', margin:0, lineHeight:1 }}>$220</p>
+                  <p style={{ fontSize:12, color:'#6b7280', margin:'4px 0 0' }}>Prepay 20 x 18.9L</p>
                 </div>
               </div>
-              <p style={{ fontSize:12, color:'#757575', marginTop:10, marginBottom:0 }}>+ $10 refundable jug deposit for new customers</p>
+              <p style={{ fontSize:12, color:'#6b7280', marginTop:10, marginBottom:0 }}>Plus an initial refundable deposit per bottle. In store, oxygenated is 50 cents more per bottle than purified.</p>
             </div>
             <a href="/order" style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'13px 26px', borderRadius:8, background:'#059669', color:'#fff', fontWeight:700, fontSize:14, textDecoration:'none' }}>
               Order Now
@@ -118,7 +119,7 @@ export default function HyperOxygenatedPage() {
               <div style={{ position:'absolute', inset:0, borderRadius:'50%', background:'linear-gradient(135deg,rgba(5,150,105,.2),rgba(41,171,226,.15))', border:'2px solid rgba(52,211,153,.3)', display:'flex', alignItems:'center', justifyContent:'center' }}>
                 <div style={{ textAlign:'center' }}>
                   <div style={{ fontSize:48, fontWeight:800, color:'#059669', lineHeight:1 }}>O₂</div>
-                  <div style={{ fontSize:13, color:'#757575', marginTop:8, fontWeight:500 }}>40+ ppm</div>
+                  <div style={{ fontSize:13, color:'#4b5563', marginTop:8, fontWeight:500 }}>35 to 40 ppm</div>
                 </div>
               </div>
               {[0,60,120,180,240,300].map((deg,i)=>(
@@ -142,23 +143,22 @@ export default function HyperOxygenatedPage() {
           <div style={{ overflowX:'auto', WebkitOverflowScrolling:'touch', borderRadius:20, border:'1.5px solid rgba(41,171,226,.15)', boxShadow:'0 4px 20px rgba(30,56,146,.07)' }}>
             <div style={{ minWidth:520 }}>
               {/* Header */}
-              <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', background:'#1E3892' }}>
-                {['', 'Tap Water', 'Purified', 'Hyper-Oxygenated'].map((h,i)=>(
-                  <div key={i} style={{ padding:'16px 20px', fontSize:12, fontWeight:700, color: i === 3 ? '#34d399' : 'rgba(255,255,255,.7)', textAlign:'center', borderLeft: i > 0 ? '1px solid rgba(255,255,255,.1)' : 'none' }}>{h}</div>
+              <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr', background:'#1E3892' }}>
+                {['', 'Purified', 'Hyper-Oxygenated'].map((h,i)=>(
+                  <div key={i} style={{ padding:'16px 20px', fontSize:12, fontWeight:700, color: i === 2 ? '#34d399' : 'rgba(255,255,255,.88)', textAlign:'center', borderLeft: i > 0 ? '1px solid rgba(255,255,255,.1)' : 'none' }}>{h}</div>
                 ))}
               </div>
               {[
-                { label:'Dissolved Oxygen', tap:'1–2 ppm', pure:'6–8 ppm', oxy:'38–40 ppm', highlight:true },
-                { label:'Chlorine & Chemicals', tap:'✓ Present', pure:'✗ Removed', oxy:'✗ Removed', highlight:false },
-                { label:'Heavy Metals', tap:'✓ Possible', pure:'✗ Removed', oxy:'✗ Removed', highlight:false },
-                { label:'Fluoride', tap:'✓ Present', pure:'✗ Removed', oxy:'✗ Removed', highlight:false },
-                { label:'Taste', tap:'Varies', pure:'Clean & crisp', oxy:'Clean & crisp', highlight:false },
-                { label:'Hydration Speed', tap:'Standard', pure:'Better', oxy:'Up to 5× faster', highlight:true },
-                { label:'Price per litre', tap:'~$0.002', pure:'~$0.50', oxy:'~$0.56', highlight:false },
+                { label:'Oxygen', pure:'Aerated', oxy:'35 to 40 ppm', highlight:true },
+                { label:'Taste', pure:'Fresh and clean', oxy:'Lighter, smoother', highlight:false },
+                { label:'18.9L delivered', pure:'$10.50', oxy:'$11.50', highlight:false },
+                { label:'11.3L delivered', pure:'$7.50', oxy:'$8.50', highlight:false },
+                { label:'Prepay 20 x 18.9L', pure:'$200', oxy:'$220', highlight:false },
+                { label:'5 gallon fill in store', pure:'$5.50', oxy:'$6.00', highlight:true },
+                { label:'3 gallon fill in store', pure:'$4.00', oxy:'$4.50', highlight:false },
               ].map((row,i)=>(
-                <div key={i} style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', background: row.highlight ? 'rgba(5,150,105,.04)' : (i%2===0?'#fff':'#f8fafc'), borderTop:'1px solid #f1f5f9' }}>
+                <div key={i} style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr', background: row.highlight ? 'rgba(5,150,105,.04)' : (i%2===0?'#fff':'#f8fafc'), borderTop:'1px solid #f1f5f9' }}>
                   <div style={{ padding:'14px 20px', fontSize:13, fontWeight:600, color:'#1E3892' }}>{row.label}</div>
-                  <div style={{ padding:'14px 20px', fontSize:13, color:'#9E9E9E', textAlign:'center', borderLeft:'1px solid #f1f5f9' }}>{row.tap}</div>
                   <div style={{ padding:'14px 20px', fontSize:13, color:'#29ABE2', fontWeight:500, textAlign:'center', borderLeft:'1px solid #f1f5f9' }}>{row.pure}</div>
                   <div style={{ padding:'14px 20px', fontSize:13, color:'#059669', fontWeight:700, textAlign:'center', borderLeft:'1px solid #f1f5f9' }}>{row.oxy}</div>
                 </div>
@@ -168,26 +168,26 @@ export default function HyperOxygenatedPage() {
         </div>
       </section>
 
-      {/* BENEFITS */}
+      {/* WHAT YOU GET */}
       <section style={{ padding:'80px 24px', background:'#fff' }}>
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <div style={{ textAlign:'center', marginBottom:52 }}>
-            <span style={{ fontSize:11, fontWeight:700, color:'#059669', letterSpacing:'.25em', textTransform:'uppercase', display:'block', marginBottom:12 }}>Why People Choose It</span>
+            <span style={{ fontSize:11, fontWeight:700, color:'#059669', letterSpacing:'.25em', textTransform:'uppercase', display:'block', marginBottom:12 }}>Good to Know</span>
             <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#1E3892', letterSpacing:'-.02em' }}>
-              The Benefits
+              What You Get
             </h2>
           </div>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(270px,1fr))', gap:24 }}>
             {[
-              { icon:'🏃', title:'Athletic Performance', body:'Many athletes report reduced recovery time and sustained energy. Increased oxygen availability supports muscles during intense exercise.', accent:'#059669' },
-              { icon:'🧠', title:'Mental Clarity', body:'The brain is highly oxygen-dependent. Users report improved focus and reduced mental fatigue after switching to oxygenated water.', accent:'#29ABE2' },
-              { icon:'💆', title:'Hangover Relief', body:'Oxygen is used by the liver to metabolize alcohol. Hydrating with oxygen-rich water may help the body recover faster.', accent:'#7c3aed' },
-              { icon:'🌿', title:'Altitude Support', body:'Visitors and residents adjusting to altitude changes report that oxygenated water helps ease the transition and reduce fatigue.', accent:'#059669' },
-              { icon:'💧', title:'Superior Hydration', body:'Because our base water is already multi-stage purified, you get maximum hydration with no chlorine, heavy metals, or contaminants.', accent:'#29ABE2' },
-              { icon:'✅', title:'Zero Additives', body:'No sugar, no electrolytes, no synthetic compounds. Just pure water and dissolved oxygen — the way nature intended, amplified.', accent:'#059669' },
+              { icon:<DropIcon size={20} />, title:'Lighter, Smoother Taste', body:'Hyper-oxygenated water has a lighter, smoother taste. Try a bottle and see what you think.' },
+              { icon:<DropIcon size={20} />, title:'35 to 40 ppm of Oxygen', body:'A proprietary process nano-sizes the oxygen molecules, so the water holds four times the amount of oxygen.' },
+              { icon:<CarIcon size={20} />, title:'Delivered to Your Door', body:'Across Greater Victoria, from Sooke to Sidney and Oak Bay to Westshore. Every two weeks, monthly, or on request.' },
+              { icon:<StoreIcon size={20} />, title:'Filled in Store', body:'Fill up at 104-1505 Admirals Road. In store, oxygenated is just 50 cents more per bottle than purified.' },
+              { icon:<BottleIcon size={20} />, title:'Two Delivery Sizes', body:'3 gallon (11.3L) and 5 gallon (18.9L) bottles, delivered to your home or office.' },
+              { icon:<ExchangeIcon size={20} />, title:'Prepay and Save', body:'Prepay 20 x 18.9L bottles for $220. That works out to $11 each.' },
             ].map((item,i)=>(
               <div key={i} className="oxy-card" style={{ background:'#f8fafc', border:`1.5px solid rgba(5,150,105,.15)`, borderRadius:16, padding:'28px 24px' }}>
-                <div style={{ fontSize:28, marginBottom:14 }}>{item.icon}</div>
+                <div style={{ marginBottom:14 }}><IconTile>{item.icon}</IconTile></div>
                 <h3 style={{ fontSize:16, fontWeight:700, color:'#1E3892', marginBottom:10 }}>{item.title}</h3>
                 <p style={{ fontSize:14, color:'#757575', lineHeight:1.65 }}>{item.body}</p>
               </div>
@@ -203,12 +203,7 @@ export default function HyperOxygenatedPage() {
             <span style={{ fontSize:11, fontWeight:700, color:'#059669', letterSpacing:'.25em', textTransform:'uppercase', display:'block', marginBottom:12 }}>Common Questions</span>
             <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#1E3892', letterSpacing:'-.02em' }}>FAQ</h2>
           </div>
-          {[
-            { q:"Is it safe to drink every day?", a:"Yes. Hyper-oxygenated water is simply purified water with additional dissolved oxygen. Oxygen is a natural component of all water — we've just increased the concentration significantly. No known adverse effects from daily consumption." },
-            { q:'How long does the oxygen stay in the water?', a:'Once opened, the oxygen slowly dissipates. We recommend consuming within 24–48 hours of opening for best effect. Our jugs are sealed under pressure to preserve oxygen concentration until ready.' },
-            { q:"How is it different from sparkling water?", a:"Sparkling water contains dissolved carbon dioxide (CO₂) which creates bubbles. Our hyper-oxygenated water contains dissolved oxygen (O₂) with no carbonation — it tastes and looks exactly like regular water." },
-            { q:"Is the science proven?", a:"Research on oral oxygen absorption is ongoing. While double-blind clinical evidence is still emerging, many athletes and health-conscious individuals report clear benefits. We present it as a wellness option, not a medical treatment." },
-          ].map((item,i)=>(
+          {FAQS.map((item,i)=>(
             <div key={i} className="oxy-faq" style={{ marginBottom:16, padding:'24px 28px', background:'#fff', borderRadius:14, border:'1px solid #e2e8f0' }}>
               <h3 style={{ fontSize:15, fontWeight:700, color:'#1E3892', marginBottom:10, display:'flex', alignItems:'center', gap:10 }}>
                 <span style={{ width:24, height:24, borderRadius:'50%', background:'rgba(5,150,105,.12)', color:'#059669', fontSize:13, fontWeight:800, display:'inline-flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>?</span>
@@ -222,17 +217,16 @@ export default function HyperOxygenatedPage() {
 
       {/* CTA */}
       <section style={{ position:'relative', overflow:'hidden', padding:'80px 24px', background:'linear-gradient(135deg,#1E3892,#064e3b)', textAlign:'center' }}>
-        <div style={{ position:'absolute', width:400, height:400, top:-80, right:-80, borderRadius:'50%', background:'rgba(52,211,153,.08)', animation:'oxy-pulse 7s ease-in-out infinite', pointerEvents:'none' }} />
         <div style={{ position:'relative', zIndex:2, maxWidth:580, margin:'0 auto' }}>
           <h2 style={{ fontFamily:'var(--font-fraunces),serif', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:600, color:'#fff', letterSpacing:'-.02em', marginBottom:16 }}>
             Try It Today
           </h2>
-          <p style={{ fontSize:16, color:'rgba(255,255,255,.65)', maxWidth:440, margin:'0 auto 36px', lineHeight:1.7 }}>
-            Available in-store at 104-1505 Admirals Road, or order online for home delivery in Victoria.
+          <p style={{ fontSize:16, color:'rgba(255,255,255,.88)', maxWidth:440, margin:'0 auto 36px', lineHeight:1.7 }}>
+            Fill up in store at 104-1505 Admirals Road, or get it delivered to your home or office across Greater Victoria.
           </p>
           <div style={{ display:'flex', gap:12, justifyContent:'center', flexWrap:'wrap' }}>
-            <a href="/order" style={{ padding:'14px 32px', borderRadius:8, background:'#059669', color:'#fff', fontWeight:700, fontSize:15, textDecoration:'none', boxShadow:'0 6px 24px rgba(5,150,105,.4)' }}>Order Online — $10.50 / 18.9L</a>
-            <a href="tel:2503812088" style={{ padding:'14px 32px', borderRadius:8, background:'rgba(255,255,255,.08)', border:'1.5px solid rgba(255,255,255,.2)', color:'#fff', fontWeight:600, fontSize:15, textDecoration:'none' }}>Call 250 381-2088</a>
+            <a href="/order" style={{ padding:'14px 32px', borderRadius:8, background:'#059669', color:'#fff', fontWeight:700, fontSize:15, textDecoration:'none', boxShadow:'0 6px 24px rgba(5,150,105,.4)' }}>Order Online · $11.50 / 18.9L</a>
+            <a href="tel:2503812088" style={{ padding:'14px 32px', borderRadius:8, background:'rgba(255,255,255,.08)', border:'1.5px solid rgba(255,255,255,.2)', color:'#fff', fontWeight:600, fontSize:15, textDecoration:'none', display:'inline-flex', alignItems:'center', gap:8 }}><PhoneIcon size={16} /> Call 250 381-2088</a>
           </div>
         </div>
       </section>
