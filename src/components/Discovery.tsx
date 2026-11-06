@@ -16,9 +16,9 @@ const nodes = [
     popupSide: 'right',
     phase: 'Phase 01',
     title: 'The Deep Clean',
-    problem: 'Chlorine, rust & micro-sediments from tap water.',
-    solution: 'Advanced sediment + carbon filtration.',
-    result: 'Chemical odours stripped. Pure, crisp taste starts here.',
+    problem: 'Tap water comes in.',
+    solution: 'Three-stage charcoal micron filtration.',
+    result: 'The first clean, before the water reaches the membrane.',
     href: '/the-ultimate-water-store',
   },
   {
@@ -29,9 +29,9 @@ const nodes = [
     popupSide: 'right',
     phase: 'Phase 02',
     title: 'Molecular Purity',
-    problem: 'Invisible lead, fluoride & heavy metals.',
-    solution: 'High-pressure Reverse Osmosis membrane.',
-    result: '99.8% of all dissolved solids removed. Pure H₂O.',
+    problem: "Dissolved solids you can't see.",
+    solution: 'Reverse osmosis.',
+    result: 'Total dissolved solids under 0.1 ppm.',
     href: '/the-ultimate-water-store',
   },
   {
@@ -42,9 +42,9 @@ const nodes = [
     popupSide: 'left',
     phase: 'Phase 03',
     title: 'The Oxygen Boost',
-    problem: 'Standard water is flat and slow to hydrate.',
-    solution: 'Medical-grade O₂ infusion.',
-    result: 'Up to 5× higher oxygen. Faster recovery, better hydration.',
+    problem: 'For our hyper-oxygenated water.',
+    solution: 'A process that nano-sizes the oxygen.',
+    result: '35 to 40 ppm of oxygen, about four times the usual.',
     href: '/hyper-oxygenated-water',
   },
   {
@@ -55,9 +55,9 @@ const nodes = [
     popupSide: 'left',
     phase: 'Phase 04',
     title: 'The Safety Seal',
-    problem: 'Bacteria & viral growth during storage.',
-    solution: 'UV-C sterilisation + Ozone treatment.',
-    result: '100% germ-free. Extended shelf life. Every bottle.',
+    problem: 'Keeping it clean to the bottle.',
+    solution: 'Ultraviolet light and ozonation.',
+    result: 'pH balanced slightly alkaline, and aerated for a fresh, clean taste.',
     href: '/the-ultimate-water-store',
   },
 ];
@@ -79,9 +79,8 @@ export default function Discovery() {
             <span className="mobile-only">The Purity Stages</span>
           </span>
           <h2 style={{
-            fontFamily: 'var(--font-fraunces), serif',
-            fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', fontWeight: 600,
-            color: P, letterSpacing: '-0.02em', lineHeight: 1.12, marginBottom: 14,
+            fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', fontWeight: 800,
+            color: P, letterSpacing: '-0.03em', lineHeight: 1.12, marginBottom: 14,
           }}>
             The Purity Journey
           </h2>

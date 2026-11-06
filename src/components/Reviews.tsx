@@ -1,20 +1,17 @@
 'use client';
 
 import { useInView } from '@/hooks/useInView';
-import { useCountUp } from '@/hooks/useCountUp';
 import ScrollReveal from './ScrollReveal';
 
 const P = '#1E3892';
 const T = '#29ABE2';
 const CTA = '#29ABE2';
 
+// Word for word from their Google listing (5 of 24 visible signed out; 3 shown). See Clients/mount-doug-springs-demo/reviews.json.
 const reviews = [
-  { name: 'Sarah M.', location: 'Oak Bay', rating: 5, text: "Best water in Victoria, hands down. The staff always loads the jugs right into my car — I never have to lift a thing. Been a customer for 4 years and wouldn't go anywhere else.", since: 'Customer since 2020' },
-  { name: 'James T.', location: 'Saanich', rating: 5, text: 'We switched from tap water after a neighbour recommended Mount Doug Springs. The difference in taste is incredible. The oxygenated water is something else entirely.', since: 'Customer since 2021' },
-  { name: 'Linda K.', location: 'Langford', rating: 5, text: 'Home delivery is so convenient. They always bottle it fresh the night before — you can actually taste the difference from store-bought. Wes and his team are amazing.', since: 'Customer since 2019' },
-  { name: 'David R.', location: 'Esquimalt', rating: 5, text: "Our office runs on Mount Doug Springs water. Professional, reliable, and the water tastes genuinely pure. We've been on the delivery route for two years without a single issue.", since: 'Business customer' },
-  { name: 'Michelle P.', location: 'View Royal', rating: 5, text: 'The drive-up service is unbeatable. I pull in, they take my jugs, fill them, and load them back — all in under five minutes. Perfect for a busy schedule.', since: 'Customer since 2022' },
-  { name: 'Robert H.', location: 'Central Saanich', rating: 5, text: "Family-owned businesses don't get better than this. Wes genuinely cares about the quality of his water and his community. Five stars isn't enough.", since: 'Customer since 2018' },
+  { name: "Nadia T.", location: 'Google review', rating: 5, text: "Thank you so much for your help! I was struggling with terrible water quality issues in my aquarium. My tap water was the culprit, even after treatment, and my fish were suffering. Your water has been a lifesaver! After just one water change, my perimeters are perfect, and my fish are thriving. I really appreciate your expertise, the great deal, and the assistance carrying the bottles to my car. You saved my aquarium!", since: "a year ago" },
+  { name: "Seaweed Hero", location: 'Google review', rating: 5, text: "The Ultimate Water store gives great water and even carries it out to my car! I like to pay 50 cents extra for 5 gallons of Oxygen Infused H2O.", since: "a year ago" },
+  { name: "Ketan T.", location: 'Google review', rating: 5, text: "Great store, and friendly and efficient staff.  Probably the best water you can purchase in all of (Greater) Victoria.  Five stars.", since: "3 years ago" },
 ];
 
 function StarRow({ count }: { count: number }) {
@@ -31,7 +28,6 @@ function StarRow({ count }: { count: number }) {
 
 export default function Reviews() {
   const { ref: aggRef, inView: aggInView } = useInView();
-  const reviewCount = useCountUp(200, aggInView, 1600);
 
   return (
     <section id="reviews" aria-label="Customer reviews" style={{ padding: '96px 0', background: '#F8FAFC' }}>
@@ -45,7 +41,7 @@ export default function Reviews() {
               Victoria Speaks for Itself
             </h2>
             <p style={{ fontSize: 16, color: '#757575', maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
-              Over 200 five-star reviews from families, offices, and businesses across Greater Victoria.
+              4.6 stars from 24 reviews on Google. Here's what a few of our customers wrote.
             </p>
             {/* Animated aggregate badge */}
             <div
@@ -60,13 +56,15 @@ export default function Reviews() {
             >
               <div style={{ display: 'flex', gap: 3 }}>
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} width="18" height="18" viewBox="0 0 14 14" fill="#facc15">
-                    <path d="M7 1L8.6 4.9L13 5.5L10 8.3L10.8 12.8L7 10.7L3.2 12.8L4 8.3L1 5.5L5.4 4.9L7 1Z"/>
+                  <svg key={i} width="18" height="18" viewBox="0 0 14 14">
+                    <defs><clipPath id={`rs${i}`}><rect x="0" y="0" width={i < 4 ? 14 : 14 * 0.6} height="14" /></clipPath></defs>
+                    <path d="M7 1L8.6 4.9L13 5.5L10 8.3L10.8 12.8L7 10.7L3.2 12.8L4 8.3L1 5.5L5.4 4.9L7 1Z" fill="#e5e7eb"/>
+                    <path d="M7 1L8.6 4.9L13 5.5L10 8.3L10.8 12.8L7 10.7L3.2 12.8L4 8.3L1 5.5L5.4 4.9L7 1Z" fill="#facc15" clipPath={`url(#rs${i})`}/>
                   </svg>
                 ))}
               </div>
-              <span style={{ fontSize: 18, fontWeight: 800, color: P }}>5.0</span>
-              <span style={{ fontSize: 13, color: '#757575', fontWeight: 500 }}>from {reviewCount}+ reviews on Google</span>
+              <span style={{ fontSize: 18, fontWeight: 800, color: P }}>4.6</span>
+              <span style={{ fontSize: 13, color: '#757575', fontWeight: 500 }}>from 24 reviews on Google</span>
             </div>
           </div>
         </ScrollReveal>
@@ -130,7 +128,7 @@ export default function Reviews() {
         <ScrollReveal delay={0.2}>
           <div style={{ textAlign: 'center', marginTop: 44 }}>
             <a
-              href="https://www.google.com/maps/place/Mount+Doug+Springs"
+              href="https://www.google.com/maps/place/?q=place_id:ChIJEW3Pjj5yj1QROcW39SX9Yek"
               target="_blank" rel="noopener noreferrer"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -142,7 +140,7 @@ export default function Reviews() {
               onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = `rgba(41,171,226,0.06)`; el.style.borderColor = T; }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.borderColor = 'rgba(41,171,226,0.3)'; }}
             >
-              Read all reviews on Google
+              Read all 24 reviews on Google
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
           </div>

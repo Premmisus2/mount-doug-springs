@@ -10,34 +10,25 @@ const P   = '#1E3892';
 const T   = '#29ABE2';
 const CTA = '#29ABE2';
 
+// Every line from their own sites, the BC registry or their Google listing.
 const ticker = [
-  '18.9L · $9.50',
-  'Bottled fresh every evening',
-  '21+ years in Victoria',
-  'We load it into your car',
-  '5.0 ★ on Google',
-  'No contracts · No hassle',
-  '40ppm dissolved O₂',
-  '1,100+ delivery customers',
+  '18.9L delivered · $10.50',
+  'Bottled the evening before delivery',
+  'Family owned since 2003',
+  'We carry it out to your car',
+  '4.6 ★ on Google',
+  'Delivery every 2 weeks, monthly or on request',
+  '35 to 40 ppm oxygen',
+  'Sooke to Sidney, Oak Bay to Westshore',
 ];
-
-function getFreshnessMessage() {
-  const h = new Date().getHours();
-  if (h >= 18) return { msg: "Bottling tonight for tomorrow's deliveries", icon: '🌙' };
-  if (h >= 14) return { msg: 'Bottled this afternoon — deliveries start at dawn', icon: '⚡' };
-  if (h >= 9)  return { msg: 'Fresh batch bottled last evening', icon: '💧' };
-  return { msg: 'Bottled last night — arriving at doors today', icon: '🚚' };
-}
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { containerRef, scrollProgress } = useScrollAnimation();
   const [tickerOffset, setTickerOffset] = useState(0);
   const { ref: statsRef, inView: statsInView } = useInView();
-  const freshness = getFreshnessMessage();
 
-  const customers = useCountUp(1100, statsInView, 1800);
-  const years     = useCountUp(21, statsInView, 1400);
+  const years     = useCountUp(20, statsInView, 1400);
 
   const textOpacity = Math.max(0, 1 - scrollProgress * 2.8);
   const textY = scrollProgress * 40;
@@ -104,26 +95,6 @@ export default function Hero() {
           transform: `translateY(${textY}px)`,
         }}>
 
-          {/* Freshness element — top right */}
-          <div className="hero-freshness" style={{
-            position: 'absolute',
-            top: 'clamp(80px, 10vh, 120px)',
-            right: 'clamp(28px, 6vw, 80px)',
-            display: 'flex', alignItems: 'center', gap: 8,
-            background: 'rgba(16,185,129,0.12)',
-            border: '1px solid rgba(16,185,129,0.3)',
-            borderRadius: 100,
-            padding: '6px 14px',
-          }}>
-            <span className="fresh-dot" style={{
-              width: 7, height: 7, borderRadius: '50%',
-              background: '#10b981', display: 'inline-block', flexShrink: 0,
-            }} />
-            <span style={{ fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.75)', whiteSpace: 'nowrap' }}>
-              {freshness.icon} {freshness.msg}
-            </span>
-          </div>
-
           {/* Main content */}
           <div style={{ maxWidth: 680 }}>
 
@@ -140,8 +111,8 @@ export default function Hero() {
                 <span style={{ width: 5, height: 5, borderRadius: '50%', background: CTA, display: 'inline-block', boxShadow: `0 0 6px ${CTA}` }} />
                 Victoria, BC
               </span>
-              <span className="mobile-hide" style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
-                · Admirals Road · 21+ years
+              <span className="mobile-hide" style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>
+                · Admirals Road · Since 2003
               </span>
             </div>
 
@@ -166,7 +137,7 @@ export default function Hero() {
               <span style={{
                 display: 'block',
                 fontSize: 'clamp(1.1rem, 2.2vw, 1.8rem)', fontWeight: 400,
-                color: 'rgba(255,255,255,0.55)', letterSpacing: '-0.01em',
+                color: 'rgba(255,255,255,0.88)', letterSpacing: '-0.01em',
                 lineHeight: 1.3, marginTop: 14, fontStyle: 'italic',
               }}>
                 Zero heavy lifting.
@@ -175,18 +146,18 @@ export default function Hero() {
 
             <p className="mobile-hide" style={{
               fontSize: 'clamp(0.9rem, 1.3vw, 1.05rem)',
-              color: 'rgba(255,255,255,0.65)',
+              color: 'rgba(255,255,255,0.9)',
               lineHeight: 1.75, maxWidth: 420, marginBottom: 32,
             }}>
-              We sanitize, fill, and <strong style={{ color: '#fff', fontWeight: 700 }}>load every jug into your car</strong>.
-              Drive-up or home delivery — pure water, done for you.
+              We fill your bottles and <strong style={{ color: '#fff', fontWeight: 700 }}>carry them out to your car</strong>.
+              In-store pickup or home delivery. Pure water, done for you.
             </p>
             <p className="mobile-only" style={{
               fontSize: '0.95rem',
-              color: 'rgba(255,255,255,0.65)',
+              color: 'rgba(255,255,255,0.9)',
               lineHeight: 1.65, maxWidth: 320, marginBottom: 28,
             }}>
-              Drive-up or home delivery. <strong style={{ color: '#fff' }}>We load every jug for you.</strong>
+              In-store pickup or home delivery. <strong style={{ color: '#fff' }}>We carry every bottle out for you.</strong>
             </p>
 
             {/* CTAs with Ripple */}
@@ -202,7 +173,7 @@ export default function Hero() {
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                 }}
               >
-                Shop Water
+                Order Water
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                   <path d="M2 6.5H11M7 2.5L11 6.5L7 10.5" stroke={P} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -232,8 +203,8 @@ export default function Hero() {
               }}
             >
               {[
-                { display: `${customers.toLocaleString()}+`, label: 'Customers' },
-                { display: '5.0 ★', label: 'Google' },
+                { display: '2003', label: 'Family owned since' },
+                { display: '4.6 ★', label: 'Google' },
                 { display: `${years}+`, label: 'Years' },
               ].map((s, i) => (
                 <div key={i} style={{
@@ -241,7 +212,7 @@ export default function Hero() {
                   borderRight: i < 2 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                 }}>
                   <div style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', fontWeight: 800, color: CTA, lineHeight: 1 }}>{s.display}</div>
-                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.38)', marginTop: 4, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{s.label}</div>
+                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.8)', marginTop: 4, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{s.label}</div>
                 </div>
               ))}
             </div>

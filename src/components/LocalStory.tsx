@@ -2,31 +2,33 @@
 
 import ScrollReveal from './ScrollReveal';
 import RippleButton from './RippleButton';
+import { StoreIcon, DropIcon, CarIcon, BottleIcon, PhoneIcon, ArrowIcon, IconTile } from './Icons';
 
 const P   = '#1E3892';
 const T   = '#29ABE2';
 const O   = '#29ABE2';
 
+// Every line here is from their own sites (mtdougsprings.com, ultimatewaterstore.com).
 const features = [
   {
-    icon: '🚗',
-    title: 'Drive Right Up',
-    body: 'Pull up to our Admirals Walk bay. No parking hassles, no long walks with heavy jugs.',
+    icon: <StoreIcon size={20} />,
+    title: 'Bring Any Bottle',
+    body: 'Bring your bottles to 104-1505 Admirals Road. We fill 1, 2, 3, 4 and 5 gallon bottles of any brand.',
   },
   {
-    icon: '💧',
+    icon: <DropIcon size={20} />,
     title: 'We Fill It Fresh',
-    body: 'Your jug is sanitized and filled on the spot with multi-stage purified water.',
+    body: 'Our staff fill your bottles on the spot with purified water from our six-step process.',
   },
   {
-    icon: '💪',
-    title: 'We Load Your Car',
-    body: "Our staff carries your filled jugs and loads them directly into your vehicle. You don't lift a thing.",
+    icon: <CarIcon size={20} />,
+    title: 'We Carry It Out',
+    body: "Our staff carry your filled bottles out to your car. You don't lift a thing.",
   },
   {
-    icon: '♻️',
-    title: 'Drop & Go Exchange',
-    body: 'Leave your empty, take a full one. Your $10 deposit comes back when you bring it in.',
+    icon: <BottleIcon size={20} />,
+    title: 'New Bottles In Store',
+    body: 'No bottle yet? We sell new ones in the store, along with coolers, crocks and pumps.',
   },
 ];
 
@@ -40,12 +42,12 @@ export default function LocalStory() {
           <ScrollReveal variant="left">
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '6px 14px', borderRadius: 100,
+              padding: '6px 14px', borderRadius: 4,
               background: `${T}15`, border: `1px solid ${T}30`,
               fontSize: 12, fontWeight: 700, color: T, letterSpacing: '0.06em', textTransform: 'uppercase',
               marginBottom: 24,
             }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: T, display: 'inline-block' }} />
+              <span style={{ width: 6, height: 6, borderRadius: 1, background: T, display: 'inline-block' }} />
               Victoria's Local Water Store
             </span>
 
@@ -58,10 +60,10 @@ export default function LocalStory() {
             </h2>
 
             <p style={{ fontSize: 16, color: '#757575', lineHeight: 1.8, marginBottom: 16 }}>
-              At <strong style={{ color: P }}>104-1505 Admirals Road</strong> in Victoria's Admirals Walk — we sanitize your jug, fill it fresh, and carry it to your car. <span className="mobile-hide">We've built a reputation on making pure water effortless to get.</span>
+              At <strong style={{ color: P }}>104-1505 Admirals Road</strong> in View Royal, we fill your bottles fresh and carry them out to your car. <span className="mobile-hide">Bring any brand, from 1 to 5 gallons.</span>
             </p>
             <p className="mobile-hide" style={{ fontSize: 16, color: '#757575', lineHeight: 1.8, marginBottom: 32 }}>
-              Every customer gets the same white-glove treatment — we sanitize your jug, fill it fresh, and carry it to your car. Whether you're a single household or an office with a standing order, you'll never struggle with a heavy water jug at our store.
+              Every customer gets the same treatment. Whether you're a single household or an office, you'll never have to carry a heavy bottle out of our store.
             </p>
 
             {/* Feature list */}
@@ -69,12 +71,7 @@ export default function LocalStory() {
               {features.map((f, i) => (
                 <ScrollReveal key={i} variant="up" delay={i * 0.08}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
-                    <div style={{
-                      width: 44, height: 44, borderRadius: 12,
-                      background: '#F8FAFC', border: '1px solid #e2e8f0',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 20, flexShrink: 0,
-                    }}>{f.icon}</div>
+                    <IconTile>{f.icon}</IconTile>
                     <div>
                       <p style={{ fontSize: 15, fontWeight: 700, color: P, marginBottom: 3 }}>{f.title}</p>
                       <p style={{ fontSize: 14, color: '#757575', lineHeight: 1.6 }}>{f.body}</p>
@@ -97,7 +94,7 @@ export default function LocalStory() {
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                 }}
               >
-                📍 Get Directions
+                Get Directions <ArrowIcon size={16} />
               </RippleButton>
               <RippleButton
                 href="tel:2503812088"
@@ -110,7 +107,7 @@ export default function LocalStory() {
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                 }}
               >
-                📞 250 381-2088
+                <PhoneIcon size={16} /> 250 381-2088
               </RippleButton>
             </div>
           </ScrollReveal>
@@ -135,16 +132,11 @@ export default function LocalStory() {
                 boxShadow: '0 8px 32px rgba(30,56,146,0.2)',
               }}>
                 <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: `${T}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M9 2C6.239 2 4 4.239 4 7C4 10.5 9 16 9 16C9 16 14 10.5 14 7C14 4.239 11.761 2 9 2Z" stroke={T} strokeWidth="1.5"/>
-                      <circle cx="9" cy="7" r="2" fill={T} fillOpacity="0.3" stroke={T} strokeWidth="1.2"/>
-                    </svg>
-                  </div>
+                  <IconTile size={40}><StoreIcon size={18} /></IconTile>
                   <div>
-                    <p style={{ fontSize: 13, fontWeight: 800, color: P, marginBottom: 2 }}>Admirals Walk</p>
+                    <p style={{ fontSize: 13, fontWeight: 800, color: P, marginBottom: 2 }}>The Ultimate Water Store</p>
                     <p style={{ fontSize: 13, color: '#757575', lineHeight: 1.5 }}>104-1505 Admirals Road<br />Victoria, BC V9A 2P8</p>
-                    <p style={{ fontSize: 12, color: T, fontWeight: 600, marginTop: 4 }}>Mon–Fri 9:30am–6pm · Sat 9:30am–5pm · Sun Closed</p>
+                    <p style={{ fontSize: 12, color: T, fontWeight: 600, marginTop: 4 }}>Mon to Fri 9:30am to 6pm · Sat 9:30am to 5pm · Sun closed</p>
                   </div>
                 </div>
               </div>
@@ -152,10 +144,10 @@ export default function LocalStory() {
               {/* Years badge */}
               <div style={{
                 position: 'absolute', top: 24, right: 24,
-                background: O, borderRadius: 14, padding: '14px 18px', textAlign: 'center',
+                background: O, borderRadius: 6, padding: '14px 18px', textAlign: 'center',
                 boxShadow: '0 6px 20px rgba(41,171,226,0.35)',
               }}>
-                <p style={{ fontSize: 28, fontWeight: 800, color: P, lineHeight: 1 }}>21+</p>
+                <p style={{ fontSize: 28, fontWeight: 800, color: P, lineHeight: 1 }}>20+</p>
                 <p style={{ fontSize: 11, color: `${P}cc`, fontWeight: 600, marginTop: 2 }}>Years<br />Serving Victoria</p>
               </div>
             </div>

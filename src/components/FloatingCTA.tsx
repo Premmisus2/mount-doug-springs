@@ -1,5 +1,7 @@
 'use client';
 
+import { PhoneIcon } from './Icons';
+
 export default function FloatingCTA() {
   return (
     <>
@@ -15,7 +17,7 @@ export default function FloatingCTA() {
           alignItems: 'center',
           gap: 10,
           padding: '13px 20px',
-          borderRadius: 100,
+          borderRadius: 8,
           background: '#29ABE2',
           color: '#1E3892',
           fontWeight: 800,
@@ -34,9 +36,7 @@ export default function FloatingCTA() {
         }}
         className="floating-call"
       >
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <path d="M3.5 2H6.5L8 5.5L6 7C7 9 9 11 11 12L12.5 10L16 11.5V14.5C16 15.328 15.328 16 14.5 16C7.596 16 2 10.404 2 3.5C2 2.672 2.672 2 3.5 2Z" stroke="#1E3892" strokeWidth="1.6" strokeLinejoin="round"/>
-        </svg>
+        <PhoneIcon size={18} />
         <span>Call Now</span>
         <span style={{ fontSize: 12, opacity: 0.85, fontWeight: 600 }}>250 381-2088</span>
       </a>

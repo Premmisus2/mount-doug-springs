@@ -2,42 +2,44 @@
 
 import { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
+import { PhoneIcon } from './Icons';
 
 const P = '#1E3892';
 const T = '#29ABE2';
 
+// Every answer from their own sites (mtdougsprings.com, ultimatewaterstore.com). No certification claims: none could be verified.
 const faqs = [
   {
-    q: 'Do I need to bring my own bottle?',
-    a: 'No — we sell BPA-free 18.9L and 11.3L jugs for a one-time deposit of $10. You can also buy a new jug outright. Once you have one, just bring it back each time and we refill it fresh on the spot.',
+    q: "Do I need to bring my own bottle?",
+    a: "No. We sell new bottles in the store. If you have your own, we fill 1, 2, 3, 4 and 5 gallon bottles of any brand. Delivery bottles carry a refundable deposit.",
   },
   {
-    q: 'How often should I get my water refilled?',
-    a: 'For a family of four, an 18.9L jug typically lasts 1–2 weeks as your main drinking and cooking water. Many customers set up a regular delivery schedule or drive in every week or two — whatever works for your household.',
+    q: "How often should I get my water refilled?",
+    a: "Whatever suits you. Delivery can come every two weeks, monthly, or whenever you ask. In the store, just come in when you run low.",
   },
   {
-    q: 'What areas do you deliver to?',
-    a: 'We deliver across Greater Victoria including Saanich, Oak Bay, Esquimalt, View Royal, Langford, Colwood, Central Saanich, North Saanich, and Sidney. Call us at 250 381-2088 or check our delivery page to confirm your address.',
+    q: "What areas do you deliver to?",
+    a: "We deliver across Greater Victoria, from Sooke to Sidney and Oak Bay to Westshore. Call us at 250 381-2088 to confirm your address.",
   },
   {
-    q: 'What is the difference between Purified and Hyper-Oxygenated water?',
-    a: 'Our Purified water goes through a multi-stage filtration process including Reverse Osmosis, removing 99.8% of dissolved solids, chlorine, fluoride, and heavy metals. Our Hyper-Oxygenated water starts as our purified water and is then infused with medical-grade oxygen to reach 38–40 ppm dissolved oxygen — roughly 5× the oxygen content of standard water — which many customers find aids recovery and hydration.',
+    q: "What is the difference between Purified and Hyper-Oxygenated water?",
+    a: "Our purified water goes through our six-step process: three stages of charcoal micron filtration, reverse osmosis, ultraviolet light and ozonation, leaving under 0.1 ppm total dissolved solids. Our hyper-oxygenated water starts as that purified water and holds 35 to 40 ppm of oxygen, about four times the usual amount. In the store it's 50¢ more per bottle.",
   },
   {
-    q: 'Do I have to lift the jugs myself at the drive-up?',
-    a: 'Never. That\'s the whole point of our white-glove service. Pull up to our bay at Admirals Walk and our staff will take your empty jugs, sanitize them, fill them, and load them back into your car. You don\'t touch a thing.',
+    q: "Do I have to carry the bottles myself?",
+    a: "No. Our staff fill your bottles and carry them out to your car.",
   },
   {
-    q: 'Can I pre-pay for multiple fills and save money?',
-    a: 'Yes — our most popular option is the 20× Purified Water Bundle at $180, saving you $10 compared to individual fills. Just bring your jug and we draw from your pre-paid credits each visit. We track it on file.',
+    q: "Can I pre-pay for multiple fills and save money?",
+    a: "Yes. For delivery, prepay 20 bottles of 18.9L purified for $200 ($10 each), or oxygenated for $220 ($11 each). In the store, a 5 gallon refill is $5.50, or 30 for $130 prepaid.",
   },
   {
-    q: 'Is your water tested and certified?',
-    a: 'Absolutely. Every batch is tested beyond industry standards. We hold WorkSafeBC certification and carry a BBB A+ rating. Our multi-stage system includes sediment filtration, carbon filtration, Reverse Osmosis, UV-C sterilisation, and ozone treatment — far exceeding what municipal tap water goes through.',
+    q: "Do you sell coolers and dispensers?",
+    a: "Yes. Buy or rent a pre-tested cooler, top-loading or bottom-loading, hot and cold or hot, room and cold. We also carry porcelain crocks, hand pumps, USB pumps and crown and cradle dispensers. New coolers come with a three-year in-store warranty.",
   },
   {
-    q: 'What are your opening hours?',
-    a: 'We\'re open Monday to Friday 9:30am–6pm and Saturday 9:30am–5pm. We are closed on Sundays and holidays. Find us at 104-1505 Admirals Road, Victoria, BC. For delivery scheduling, call us at 250 381-2088 or email delivery@mtdougsprings.com.',
+    q: "What are your opening hours?",
+    a: "Monday to Friday 9:30am to 6pm, and Saturday 9:30am to 5pm. We're closed Sundays and statutory holidays. Find us at 104-1505 Admirals Road, Victoria, BC. For delivery, call 250 381-2088 or email delivery@mtdougsprings.com.",
   },
 ];
 
@@ -180,7 +182,7 @@ export default function FAQ() {
         }}>
           <p style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>Still have questions?</p>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.65)', marginBottom: 24, lineHeight: 1.6 }}>
-            Call us or send an email — we're a small local team and we actually pick up.
+            Call us or send an email. We're a small family business.
           </p>
           <div className="faq-cta-buttons" style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a
@@ -192,9 +194,7 @@ export default function FAQ() {
                 display: 'inline-flex', alignItems: 'center', gap: 7,
               }}
             >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 2.5C2 2.5 3.5 1 4.5 2.5L5.5 4.5C5.5 4.5 5 5.5 4.5 6C4 6.5 5.5 8 7 9.5C8.5 11 10 12.5 10.5 12C11 11.5 12 11 12 11L13.5 12C15 13 13.5 14.5 13.5 14.5C11.5 16.5 2 6.5 2 2.5Z" fill={P}/>
-              </svg>
+              <PhoneIcon size={15} />
               250 381-2088
             </a>
             <a

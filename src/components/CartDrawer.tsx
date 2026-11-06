@@ -178,7 +178,7 @@ export default function CartDrawer() {
                       </div>
                       {item.deposit > 0 && (
                         <p style={{ fontSize: 11, color: '#9E9E9E', marginTop: 6 }}>
-                          +${(item.deposit * item.qty).toFixed(2)} Security Credit — <strong>fully refundable</strong> on return
+                          +${(item.deposit * item.qty).toFixed(2)} deposit, <strong>fully refundable</strong> on return
                         </p>
                       )}
                     </div>
@@ -226,7 +226,7 @@ export default function CartDrawer() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#00c4db'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = O; (e.currentTarget as HTMLElement).style.transform = 'none'; }}
             >
-              Place Order — ${total.toFixed(2)}
+              Place Order · ${total.toFixed(2)}
             </a>
             <p style={{ fontSize: 12, color: '#9E9E9E', textAlign: 'center', marginTop: 10, lineHeight: 1.5 }}>
               Opens your email app. We'll call to confirm delivery &amp; collect payment.

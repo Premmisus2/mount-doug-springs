@@ -18,7 +18,7 @@ const cards = [
       </svg>
     ),
     title: 'White Glove Service',
-    body: 'Forget heavy lifting. We sanitize, fill, and load your bottles directly into your vehicle. Pure convenience, every visit.',
+    body: "We fill your bottles and carry them out to your car, so you don't lift a thing. Delivery customers get it brought to the door.",
   },
   {
     pos: 'bottomLeft',
@@ -32,7 +32,7 @@ const cards = [
       </svg>
     ),
     title: 'Eco-Friendly Loop',
-    body: 'Our refundable bottle system eliminates thousands of single-use plastics in BC every year. Pure water, zero waste.',
+    body: 'Refillable bottles with a refundable deposit, so you skip the single-use plastic. Bring yours back and we fill it again.',
   },
   {
     pos: 'topRight',
@@ -42,8 +42,8 @@ const cards = [
         <path d="M9 13l2.5 2.5 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    title: 'Certified Purity',
-    body: 'Tested beyond industry standards. We provide laboratory-grade hydration that exceeds municipal tap water quality.',
+    title: 'Six-Step Purity',
+    body: 'Charcoal filtration, reverse osmosis, UV light and ozone bring total dissolved solids under 0.1 ppm.',
   },
   {
     pos: 'bottomRight',
@@ -54,7 +54,7 @@ const cards = [
       </svg>
     ),
     title: "Victoria's Own",
-    body: "Family-owned and deeply rooted in the community. Serving Saanich, Esquimalt, and Oak Bay with local pride.",
+    body: 'Family owned and operated since 2003, delivering across Greater Victoria from Sooke to Sidney and Oak Bay to Westshore.',
   },
 ];
 
@@ -165,7 +165,7 @@ export default function Process() {
               How We Deliver Freshness
             </h2>
             <p style={{ fontSize: 16, color: '#757575', maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
-              Sustainably sourced and expertly purified — bringing Victoria's purest water straight to you.
+              Purified in our own six-step system, and bottled the evening before it's delivered.
             </p>
           </div>
         </ScrollReveal>
